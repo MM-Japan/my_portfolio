@@ -79,4 +79,5 @@ gem 'jquery-rails'
 
 gem 'sassc-rails'
 
+gem 'rubygems-update', '~> 3.3.22'
 
