@@ -81,3 +81,5 @@ gem 'sassc-rails'
 
 gem 'rubygems-update', '~> 3.3.22'
 
+gem 'ffi', '~> 1.15.0'
+
