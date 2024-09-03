@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  color: #929292;
+  color: #dedbdb;
   z-index: 0;
 }
 
@@ -59,8 +59,3 @@ a:hover {
 
 
 
-/* Ensure content has a higher z-index */
-.container, .row, .col-lg-8, .text-content {
-  position: relative;
-  z-index: -1;  /* Content is above the particles */
-}
