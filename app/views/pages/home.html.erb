@@ -1,2 +1,61 @@
-<h1>Welcome to My Portfolio</h1>
-<p>This is the home page of my portfolio website.</p>
+
+
+<!-- Hero Section -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+      <h1 class="display-4">Maxim McCain</h1>
+      <p class="lead">Hello! I'm Max, a passionate web developer focused on creating innovative web applications. Below is a showcase of my latest project:</p>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Project Section -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h2 class="text-center">Featured Project: ChoreQuest</h2>
+      <p class="text-center">ChoreQuest is a gamified task management app that turns everyday chores into exciting quests. <a href="https://www.chore-quest.com" target="_blank">Check it out here!</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Projects Section -->
+<section id="projects" class="container mt-5">
+  <h2 class="text-center">My Projects</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="<%= asset_path 'chorequest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title text-center">ChoreQuest</h3>
+          <p class="card-text">ChoreQuest is a web application that gamifies daily chores by turning them into quests that users can complete to earn points and rewards. This project was built using Ruby on Rails, JavaScript, and PostgreSQL.</p>
+          <div class="text-center">
+            <a href="https://www.chore-quest.com" target="_blank" class="btn btn-primary">View ChoreQuest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="container mt-5 text-center">
+  <h2>Contact Me</h2>
+  <div class="d-flex justify-content-center">
+    <!-- Email Icon -->
+    <a href="mailto:itsmaximuk@gmail.com" class="text-decoration-none text-dark mx-3">
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/max-mccain-b39236198/" target="_blank" class="text-decoration-none text-dark mx-3">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+
+    <!-- GitHub Icon -->
+    <a href="https://github.com/MM-Japan" target="_blank" class="text-decoration-none text-dark mx-3">
+      <i class="fab fa-github fa-2x"></i>
+    </a>
+  </div>
+</section>

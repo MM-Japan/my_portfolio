@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+
+ body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  padding: 0;
+  background-color: #1c1c1c;
+}
+
+h1 {
+  color: #dedbdb;
+  z-index: 0;
+}
+
+h2 {
+  color: #929292;
+  z-index: 0;
+}
+
+p {
+  color: #bababa;
+  z-index: 1;
+
+}
+.project {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  z-index: 1;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Ensure content has a higher z-index */
+.container, .row, .col-lg-8, .text-content {
+  position: relative;
+  z-index: -1;  /* Content is above the particles */
+}

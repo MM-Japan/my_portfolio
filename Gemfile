@@ -74,3 +74,9 @@ gem 'pg', '~> 1.2'
 
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap', '~> 5.3.0'
+gem 'jquery-rails'
+
+gem 'sassc-rails'
+
+
