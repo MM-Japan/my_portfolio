@@ -1,5 +1,3 @@
-
-
 <!-- Hero Section -->
 <div class="container mt-5">
   <div class="row justify-content-center">
@@ -10,29 +8,19 @@
   </div>
 </div>
 
-<!-- Featured Project Section -->
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <h2 class="text-center">Featured Project: ChoreQuest</h2>
-      <p class="text-center">ChoreQuest is a gamified task management app that turns everyday chores into exciting quests. <a href="https://www.chore-quest.com" target="_blank">Check it out here!</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- Projects Section -->
+<!-- Featured Projects Section -->
 <section id="projects" class="container mt-5">
-  <h2 class="text-center">My Projects</h2>
+  <h2 class="text-center">Featured Projects</h2>
   <div class="row justify-content-center">
     <!-- ChoreQuest Card -->
     <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img src="<%= asset_path 'chorequest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
-        <div class="card-body">
+      <div class="card mb-4 shadow-sm h-100">
+        <img src="<%= asset_path 'chorequest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
+        <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">ChoreQuest</h3>
-          <p class="card-text">ChoreQuest is a web application that gamifies daily chores by turning them into quests that users can complete to earn points and rewards. This project was built using Ruby on Rails, JavaScript, and PostgreSQL.</p>
+          <p class="card-text flex-grow-1 darker-p">ChoreQuest is a web application that gamifies daily chores by turning them into quests that users can complete to earn points and rewards. This project was built using Ruby on Rails, JavaScript, and PostgreSQL.</p>
           <div class="text-center">
-            <a href="https://www.chore-quest.com" target="_blank" class="btn btn-primary">View ChoreQuest</a>
+            <a href="https://www.chore-quest.com" target="_blank" class="btn btn-primary mt-auto">View ChoreQuest</a>
           </div>
         </div>
       </div>
@@ -40,13 +28,13 @@
 
     <!-- Word Quest Card -->
     <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
+      <div class="card mb-4 shadow-sm h-100">
         <img src="<%= asset_path 'wordquest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="Word Quest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">Word Quest</h3>
-          <p class="card-text">Word Quest is a fun and challenging word game where you try to find the longest word using a given set of letters. Built with Ruby on Rails and JavaScript.</p>
+          <p class="card-text flex-grow-1 darker-p">Word Quest is a fun and challenging word game where you try to find the longest word using a given set of letters. Built with Ruby on Rails and JavaScript.</p>
           <div class="text-center">
-            <%= link_to 'Play Word Quest', new_game_path, class: 'btn btn-primary' %>
+            <%= link_to 'Play Word Quest', new_game_path, class: 'btn btn-primary mt-auto' %>
           </div>
         </div>
       </div>
@@ -54,8 +42,27 @@
   </div>
 </section>
 
+<!-- Smaller Fun Projects Section -->
+<section id="smaller-projects" class="container mt-5">
+  <h2 class="text-center">Smaller Fun Projects</h2>
+  <div class="row justify-content-center">
+    <!-- JS Puzzle Game Card -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm h-100">
 
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title text-center">JS Puzzle Game</h3>
+          <p class="card-text flex-grow-1 darker-p">A fun and challenging JS puzzle game. Try to get the tiles in order. Built with vanilla JavaScript and HTML.</p>
+          <div class="text-center">
+            <a href="https://mm-japan.github.io/js-puzzle-game/" target="_blank" class="btn btn-primary mt-auto">Play JS Puzzle Game</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Contact -->
 <section id="contact" class="container mt-5 text-center">
   <h2>Contact Me</h2>
   <div class="d-flex justify-content-center">
