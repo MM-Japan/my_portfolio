@@ -12,4 +12,13 @@ Rails.application.routes.draw do
   # Set the root route to the home action of PagesController
   root 'pages#home'
 
+  resources :games, only: [:new, :score] do
+    collection do
+      post :score 
+      post :reset_score
+      post :play_again
+    end
+  end
+
+
 end

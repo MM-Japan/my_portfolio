@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require word_game
  */
 
  @import "bootstrap";
@@ -56,6 +57,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-
-

@@ -24,6 +24,7 @@
 <section id="projects" class="container mt-5">
   <h2 class="text-center">My Projects</h2>
   <div class="row justify-content-center">
+    <!-- ChoreQuest Card -->
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img src="<%= asset_path 'chorequest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
@@ -36,8 +37,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Word Quest Card -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="<%= asset_path 'wordquest_screenshot.jpg' %>" class="card-img-top img-fluid" alt="Word Quest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title text-center">Word Quest</h3>
+          <p class="card-text">Word Quest is a fun and challenging word game where you try to find the longest word using a given set of letters. Built with Ruby on Rails and JavaScript.</p>
+          <div class="text-center">
+            <%= link_to 'Play Word Quest', new_game_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
 
 
 <section id="contact" class="container mt-5 text-center">
