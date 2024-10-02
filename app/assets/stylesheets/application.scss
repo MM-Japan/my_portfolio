@@ -22,7 +22,7 @@
   line-height: 1.6;
   margin: 20px;
   padding: 0;
-  background-color: #D3D2CB;
+  background-color: #212529;
 }
 
 h1 {
@@ -221,4 +221,14 @@ a:hover {
 
 .dark-mode .bg-col {
   background-color: #212529;
+}
+
+#particles-js {
+  background: transparent;
+  z-index: -1; /* Keep it behind other elements */
+}
+
+.dark-mode .card-body {
+  background-color: #212529;
+  
 }
