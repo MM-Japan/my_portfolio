@@ -22,13 +22,25 @@
   line-height: 1.6;
   margin: 20px;
   padding: 0;
-  background-color: #1c1c1c;
+  background-color: #D3D2CB;
 }
 
 h1 {
-  color: #dedbdb;
-  z-index: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 6rem; /* Adjust the size as needed */
+  color: #333; /* Darker color for professional contrast */
+  margin-bottom: 10px;
 }
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #555; /* Slightly lighter shade for subheading */
+  margin-bottom: 20px;
+}
+
 
 h2 {
   color: #dedbdb;
@@ -52,6 +64,10 @@ a {
   color: #007BFF;
   text-decoration: none;
   z-index: 1;
+}
+
+button {
+  background-color: #333;
 }
 
 a:hover {
@@ -93,4 +109,116 @@ a:hover {
 
 .navbar a:hover:after {
   width: 100%;
+}
+
+.hero-img {
+  width: 50%;
+}
+
+.white-bar {
+  background: #fff;
+  width: 100vw;
+  height: 400px;
+  position: relative; /* Keeps the bar fixed at the top */
+  z-index: 1000; /* Ensures it's on top of other elements */
+}
+
+.fade-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.fade-image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10%; /* Adjust the height of the fade */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  /* You can adjust the colors and transparency here */
+}
+
+.fade-image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bg-col {
+  background-color: #F8F9FA;
+}
+
+/* Dark Mode */
+.dark-mode body {
+  background-color: #121212 !important;
+  color: #e0e0e0;
+}
+
+.dark-mode h1 {
+  color: #e0e0e0; /* Light color for text */
+}
+
+.dark-mode h3 {
+  color: #bdbdbd;
+}
+
+.dark-mode h2 {
+  color: #7d7d7d; /* Adjust heading color for visibility in dark mode */
+}
+
+.dark-mode p,
+.dark-mode .darker-p {
+  color: #bdbdbd; /* Light grey text */
+}
+
+.dark-mode .project {
+  background-color: #1e1e1e; /* Dark background for project card */
+  border-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode a {
+  color: #64B5F6; /* Lighter blue for links */
+}
+
+.dark-mode a:hover {
+  color: #82cfff;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0; /* Adjust button colors */
+}
+
+.dark-mode .navbar a {
+  color: #e0e0e0; /* Light color for navbar links */
+}
+
+.dark-mode .navbar a:after {
+  background: #e0e0e0;
+}
+
+.dark-mode .profile-image {
+  border-color: #424242; /* Adjust image border */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .white-bar {
+  background-color: #333; /* Adjust background bar to dark */
+}
+
+.dark-mode .fade-image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%; /* Adjust the height of the fade */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(33, 37, 41, 1) 80%);
+  /* Black fade gradient for dark mode */
+}
+
+.dark-mode .bg-col {
+  background-color: #212529;
 }
