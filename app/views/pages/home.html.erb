@@ -36,11 +36,20 @@
   <h3 class="text-center">Featured Projects</h2>
   <!-- Filter Buttons -->
   <div class="filter-buttons text-center">
-    <button onclick="filterProjects('all', this)" class="btn btn-primary active">All</button>
-    <button onclick="filterProjects('javascript', this)" class="btn btn-secondary">JavaScript</button>
-    <button onclick="filterProjects('rails', this)" class="btn btn-secondary">Ruby on Rails</button>
-    <button onclick="filterProjects('react', this)" class="btn btn-secondary">React</button>
+    <button onclick="filterProjects('all', this)" class="btn btn-primary active">
+      <i class="fas fa-th"></i> <!-- Icon for All (Optional) -->
+    </button>
+    <button onclick="filterProjects('javascript', this)" class="btn btn-secondary">
+      <i class="fab fa-js-square"></i> <!-- Icon for JavaScript -->
+    </button>
+    <button onclick="filterProjects('rails', this)" class="btn btn-secondary">
+      <i class="fas fa-gem"></i> <!-- Icon for Ruby on Rails -->
+    </button>
+    <button onclick="filterProjects('react', this)" class="btn btn-secondary">
+      <i class="fab fa-react"></i> <!-- Icon for React -->
+    </button>
   </div>
+
 
   <div class="row justify-content-center">
     <!-- ChoreQuest Card -->
@@ -158,3 +167,4 @@
   </div>
 </section>
 </div>
+<div class="mt-5" style="text-white">.</div>
