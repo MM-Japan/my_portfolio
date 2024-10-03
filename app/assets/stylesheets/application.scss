@@ -22,13 +22,25 @@
   line-height: 1.6;
   margin: 20px;
   padding: 0;
-  background-color: #1c1c1c;
+  background-color: #212529;
 }
 
 h1 {
-  color: #dedbdb;
-  z-index: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 6rem; /* Adjust the size as needed */
+  color: #333; /* Darker color for professional contrast */
+  margin-bottom: 10px;
 }
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #555; /* Slightly lighter shade for subheading */
+  margin-bottom: 20px;
+}
+
 
 h2 {
   color: #dedbdb;
@@ -52,6 +64,10 @@ a {
   color: #007BFF;
   text-decoration: none;
   z-index: 1;
+}
+
+button {
+  background-color: #333;
 }
 
 a:hover {
@@ -93,4 +109,200 @@ a:hover {
 
 .navbar a:hover:after {
   width: 100%;
+}
+
+.hero-img {
+  width: 50%;
+}
+
+.white-bar {
+  background: #fff;
+  width: 100vw;
+  height: 400px;
+  position: relative; /* Keeps the bar fixed at the top */
+  z-index: 1000; /* Ensures it's on top of other elements */
+}
+
+.fade-image-container {
+  position: relative;
+  display: inline-block; /* Makes the container only as wide as its content (image) */
+  width: fit-content; /* Adjusts the width based on the content */
+  overflow: hidden; /* Ensures no overflow beyond the image */
+  max-width: 100%; /* Ensures responsiveness */
+  border-radius: 15px;
+}
+
+.fade-image-container img {
+  display: block; /* Removes inline gap between img and container */
+  width: 100%; /* Make sure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  /* Fades the bottom 20% of the image into transparency */
+  border-radius: 40px;
+}
+
+
+.bg-col {
+  background-color: #F8F9FA;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #212529 !important;
+  color: #e0e0e0;
+}
+
+.dark-mode h1 {
+  color: #e0e0e0; /* Light color for text */
+}
+
+.dark-mode h3 {
+  color: #bdbdbd;
+}
+
+.dark-mode h2 {
+  color: #7d7d7d; /* Adjust heading color for visibility in dark mode */
+}
+
+.dark-mode p,
+.dark-mode .darker-p {
+  color: #bdbdbd; /* Light grey text */
+}
+
+.dark-mode .project {
+  background-color: #1e1e1e; /* Dark background for project card */
+  border-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode a {
+  color: #64B5F6; /* Lighter blue for links */
+}
+
+.dark-mode a:hover {
+  color: #82cfff;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0; /* Adjust button colors */
+}
+
+.dark-mode .navbar a {
+  color: #e0e0e0; /* Light color for navbar links */
+}
+
+.dark-mode .navbar a:after {
+  background: #e0e0e0;
+}
+
+.dark-mode .profile-image {
+  border-color: #424242; /* Adjust image border */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .white-bar {
+  background-color: #333; /* Adjust background bar to dark */
+}
+
+
+/* Dark Mode */
+.dark-mode .fade-image-container img {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+  /* This still fades the image, but no need to change the mask based on background color */
+}
+
+.dark-mode .bg-col {
+  background-color: #212529;
+}
+
+#particles-js {
+  background: transparent;
+  z-index: -1; /* Keep it behind other elements */
+}
+
+.dark-mode .card-body {
+  background-color: #212529;
+
+}
+
+.navbar-dark .dark-mode {
+  background-color: #F8F9FA;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Slightly lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.filter-buttons .btn {
+  background-color: #6c757d; /* Default dark color for non-active buttons */
+  color: white;
+}
+
+.filter-buttons .btn.active {
+  background-color: #007bff; /* Blue for the active button */
+  color: white; /* Ensure the text remains readable */
+}
+
+
+
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 6rem; /* Slightly smaller for medium screens */
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 4rem; /* Slightly smaller for medium screens */
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* Smaller for tablets and smaller devices */
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem; /* Smallest size for phones */
+  }
+
+  h3 {
+    font-size: 1.3rem; /* Smallest size for phones */
+  }
+
+  #image-container {
+    flex-direction: column; /* Stack vertically */
+    justify-content: center; /* Center the image */
+    align-items: center; /* Align the image in the center */
+  }
+
+  .hero-image {
+    max-width: 100%;
+    width: 250px; /* Set a minimum width for very small screens */
+    height: auto;
+  }
 }

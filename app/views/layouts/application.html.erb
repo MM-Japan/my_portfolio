@@ -1,141 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-
-
-  <!-- Include Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-  <!-- Include your CSS (Bootstrap, custom styles, etc.) -->
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
-  <script type="module" src="<%= asset_path('letter_select.js') %>"></script>
-
-</head>
-
-<body>
-  <!-- Particles Background -->
-  <div id="particles-js" style="position: fixed; width: 100%; min-height: 100vh; top: 0; left: 0; z-index: -1;"></div>
-
-  <!-- Navbar -->
-  <%= render 'shared/navbar' %>
-
-  <!-- Main content -->
-  <%= yield %>
-
-  <!-- Initialize Particles.js -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      particlesJS('particles-js', {
-  particles: {
-    number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: '#ffffff'  // White particles
-    },
-    shape: {
-      type: 'circle',
-      stroke: {
-        width: 0,
-        color: '#000000'
-      }
-    },
-    opacity: {
-      value: 0.5,
-      random: false,
-      anim: {
-        enable: false,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: false
-      }
-    },
-    size: {
-      value: 3,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 40,
-        size_min: 0.1,
-        sync: false
-      }
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: '#ffffff',
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 0.8,
-      direction: 'none',
-      random: false,
-      straight: false,
-      out_mode: 'out',
-      bounce: false,
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 1200
-      }
-    }
-  },
-  interactivity: {
-    detect_on: 'window',
-    events: {
-      onhover: {
-        enable: true,
-        mode: 'grab'  // Particles grow like bubbles on hover
-      },
-      onclick: {
-        enable: true,
-        mode: 'repulse'  // Adds more particles on click
-      },
-      resize: true
-    },
-    modes: {
-      grab: {
-        distance: 100,
-        line_linked: {
-          opacity: 0.5
-        }
-      },
-      bubble: {
-        distance: 400,
-        size: 6,  // Smaller bubbles
-        duration: 0.3,  // Shorter bubble effect duration
-        opacity: 0.8,
-        speed: 3
-      },
-      repulse: {
-        distance: 200,
-        duration: 1
-      },
-      push: {
-        particles_nb: 4  // Add 4 particles on click
-      },
-      remove: {
-        particles_nb: 2  // Remove 2 particles on click (not active here)
-      }
-    }
-  },
-  retina_detect: true
-});
-
-    });
-  </script>
-</body>
+  <head>
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Include your CSS (Bootstrap, custom styles, etc.) -->
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+    <script type="module" src="<%= asset_path('letter_select.js') %>"></script>
+    <script type="module" src="<%= asset_path('dark_mode_toggle.js') %>"></script>
+    <script type="module" src="<%= asset_path('filter_projects.js') %>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body class="bg-col">
+    <!-- Main Wrapper -->
+    <div class="bg-col"> <!-- Added bg-col here to wrap everything -->
+      <!-- Navbar -->
+      <%= render 'shared/navbar' %>
+      <!-- Main content -->
+      <%= yield %>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          AOS.init(); // Initialize AOS after DOM is fully loaded
+      });
+    </script>
+  </body>
 </html>
