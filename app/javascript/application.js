@@ -9,3 +9,4 @@ import "@popperjs/core"
 
 import "letter_select"  // Assuming this is in your importmap or located correctly in the asset pipeline.
 import "dark_mode_toggle";
+import "filter_projects"

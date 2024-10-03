@@ -15,9 +15,7 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function (
     navbar.classList.remove('navbar-dark');
     navbar.classList.add('navbar-light');
 
-    // Change text color in dark mode (white background)
-    navbar.classList.add('text-dark');  // Add a class for dark text
-    navbar.classList.remove('text-light'); // Remove light text class if exists
+
   } else {
     // Show light image, hide dark image
     darkImage.style.display = 'none';
@@ -25,8 +23,6 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function (
     navbar.classList.remove('navbar-light');
     navbar.classList.add('navbar-dark');
 
-    // Change text color back to light in light mode (dark background)
-    navbar.classList.add('text-light');
-    navbar.classList.remove('text-dark');
+   
   }
 });
