@@ -51,10 +51,28 @@
   </div>
 
 
+
+
   <div class="row justify-content-center">
+    <!-- CelebrantGPT Card -->
+    <div class="col-md-4 mt-3 rails project-card">
+    <div class="card mb-4 shadow-sm h-60">
+      <img src="<%= asset_path 'celebrantgpt_screenshot.jpg' %>" class="card-img-top img-fluid" alt="CelebrantGPT Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
+      <div class="card-body d-flex flex-column">
+        <h3 class="card-title text-center">CelebrantGPT</h3>
+        <p class="card-text flex-grow-1 darker-p">
+          CelebrantGPT is a web application designed to help celebrants create personalized speeches for ceremonies. The app uses Redis and Sidekiq for efficient background job processing, ensuring seamless API requests and smooth user experience. Built for my father who is a Celebrant to assist him in his work.
+        </p>
+        <div class="text-center">
+          <a href="https://grisly-barrow-63549-1a3c2929ec91.herokuapp.com/" target="_blank" class="btn btn-primary mt-auto">View CelebrantGPT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- ChoreQuest Card -->
     <div class="col-md-4 mt-3 rails project-card">
-      <div class="card mb-4 shadow-sm h-100">
+      <div class="card mb-4 shadow-sm h-60">
         <img src="<%= asset_path 'chorequest_screenshot.webp' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">ChoreQuest</h3>
@@ -66,23 +84,10 @@
       </div>
     </div>
 
-    <!-- FigMax Card -->
-    <div class="col-md-4 mt-3 react javascript project-card">
-      <div class="card mb-4 shadow-sm h-100">
-        <img src="<%= asset_path 'FigMax (1).webp' %>" class="card-img-top" alt="FigMax Screenshot" style="max-width: 100%; height: 100%; width: 100%;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">FigMax</h3>
-          <p class="card-text flex-grow-1 darker-p">FigMax is a Figma clone built using modern web technologies. It allows users to create and manipulate designs interactively in the browser. The project was built using React, TypeScript, Next.js, and Tailwind CSS, with integration of libraries like Fabric.js for canvas manipulation and Liveblocks for real-time collaboration.</p>
-          <div class="text-center">
-            <a href="https://figma-clone-flame-one.vercel.app/" target="_blank" class="btn btn-primary mt-auto">View FigMax</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Three.js Portfolio Card -->
     <div class="col-md-4 mt-3 react javascript project-card">
-      <div class="card mb-4 shadow-sm h-100">
+      <div class="card mb-4 shadow-sm h-60">
         <img src="<%= asset_path 'threejs_portfolio_screenshot.webp' %>" class="card-img-top img-fluid" alt="Three.js Portfolio Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">Three.js 3D Portfolio</h3>
@@ -94,9 +99,24 @@
       </div>
     </div>
 
+    <!-- FigMax Card -->
+    <div class="col-md-4 mt-3 react javascript project-card">
+      <div class="card mb-4 shadow-sm h-60">
+        <img src="<%= asset_path 'FigMax (1).webp' %>" class="card-img-top" alt="FigMax Screenshot" style="max-width: 100%; height: 100%; width: 100%;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title text-center">FigMax</h3>
+          <p class="card-text flex-grow-1 darker-p">FigMax is a Figma clone built using modern web technologies. It allows users to create and manipulate designs interactively in the browser. The project was built using React, TypeScript, Next.js, and Tailwind CSS, with integration of libraries like Fabric.js for canvas manipulation and Liveblocks for real-time collaboration.</p>
+          <div class="text-center">
+            <a href="https://figma-clone-flame-one.vercel.app/" target="_blank" class="btn btn-primary mt-auto">View FigMax</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Word Quest Card -->
     <div class="col-md-4 mt-3 rails project-card">
-      <div class="card mb-4 shadow-sm h-100">
+      <div class="card mb-4 shadow-sm h-60">
         <img src="<%= asset_path 'wordquest_screenshot.webp' %>" class="card-img-top img-fluid" alt="Word Quest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">Word Quest</h3>
@@ -111,7 +131,7 @@
 
     <!-- Stumped Album Card -->
     <div class="col-md-4 mt-3 project-card">
-      <div class="card mb-4 shadow-sm h-100">
+      <div class="card mb-4 shadow-sm h-60">
         <!-- Album Cover Image -->
         <img src="<%= asset_path 'StumpedAlbumCover.webp' %>" class="card-img-top img-fluid" alt="Stumped Album Cover" style="max-width: 100%; height: auto;">
 
