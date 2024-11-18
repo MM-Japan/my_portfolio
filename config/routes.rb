@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/home'
+  get 'pages/secrets'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,9 +13,11 @@ Rails.application.routes.draw do
   # Set the root route to the home action of PagesController
   root 'pages#home'
 
+  resources :secrets, only: [:show]
+
   resources :games, only: [:new, :score] do
     collection do
-      post :score 
+      post :score
       post :reset_score
       post :play_again
     end
