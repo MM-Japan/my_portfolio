@@ -1,234 +1,356 @@
 <!-- Hero Section -->
-
 <div id="home" style="background-image:linear-gradient(60deg, #E0F3FD 0% 50%, #eef7fb 100%);min-height:500px;max-height:1200px;height:100%;width:100%">
   <div class="bg-col">
     <div class="container">
-    <div class="row">
-      <!-- Left Column -->
-      <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
-        <div class="container mx-3">
-          <h1>Maxim McCain</h1>
-          <h3>Building Dreams into Reality</h3>
-          <!-- Dark mode button -->
-          <button id="dark-mode-toggle">💡</button>
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+          <div class="container mx-3">
+            <h1>Maxim McCain</h1>
+            <h3>Building Dreams into Reality</h3>
+            <!-- Dark mode button -->
+            <button id="dark-mode-toggle">💡</button>
+          </div>
         </div>
-      </div>
-
-      <!-- Right Column -->
-      <div class="col-12 col-md-7 pt-2">
-        <div class="container mx-3 d-flex flex-row-reverse fade-image-container" id="image-container">
-          <!-- Dark mode image -->
-          <%= image_tag "Pixar_Max-removebg-dark.webp", alt: "Full-Stack Developer Maxim", class: "img-fluid hero-image", id: "dark-image", style: "display: none; width: 75%; height: auto;", sizes: "100vw" %>
-          <!-- Light mode image -->
-          <%= image_tag "Pixar_Max-removebg.webp", alt: "Full-Stack Developer Maxim", class: "img-fluid hero-image", id: "light-image", style: "width: 75%; height: auto;", sizes: "100vw" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-<!-- Featured Projects Section -->
-<section id="projects" class="container mt-5">
-  <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="50" data-aos-easing="ease-in-out">
-  <h3 class="text-center">Featured Projects</h2>
-  <!-- Filter Buttons -->
-  <div class="filter-buttons text-center">
-    <button onclick="filterProjects('all', this)" class="btn btn-primary active">
-      <i class="fas fa-th"></i> <!-- Icon for All (Optional) -->
-    </button>
-    <button onclick="filterProjects('javascript', this)" class="btn btn-secondary">
-      <i class="fab fa-js-square"></i> <!-- Icon for JavaScript -->
-    </button>
-    <button onclick="filterProjects('rails', this)" class="btn btn-secondary">
-      <i class="fas fa-gem"></i> <!-- Icon for Ruby on Rails -->
-    </button>
-    <button onclick="filterProjects('react', this)" class="btn btn-secondary">
-      <i class="fab fa-react"></i> <!-- Icon for React -->
-    </button>
-  </div>
-
-
-
-
-  <div class="row justify-content-center">
-    <!-- CelebrantGPT Card -->
-    <div class="col-md-4 mt-3 rails project-card">
-    <div class="card mb-4 shadow-sm h-60">
-      <img src="<%= asset_path 'celebrantgpt_screenshot.jpg' %>" class="card-img-top img-fluid" alt="CelebrantGPT Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
-      <div class="card-body d-flex flex-column">
-        <h3 class="card-title text-center">CelebrantGPT</h3>
-        <p class="card-text flex-grow-1 darker-p">
-          CelebrantGPT is a web application designed to help celebrants create personalized speeches for ceremonies. The app uses Redis and Sidekiq for efficient background job processing, ensuring seamless API requests and smooth user experience. Built for my father who is a Celebrant to assist him in his work.
-        </p>
-        <div class="text-center">
-          <a href="https://celebrant.maximmccain.com/" target="_blank" class="btn btn-primary mt-auto">View CelebrantGPT</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <!-- ChoreQuest Card -->
-    <div class="col-md-4 mt-3 rails project-card">
-      <div class="card mb-4 shadow-sm h-60">
-        <img src="<%= asset_path 'chorequest_screenshot.webp' %>" class="card-img-top img-fluid" alt="ChoreQuest Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">ChoreQuest</h3>
-          <p class="card-text flex-grow-1 darker-p">ChoreQuest is a web application that gamifies daily chores by turning them into quests that users can complete to earn points and rewards. This project was built using Ruby on Rails, JavaScript, and PostgreSQL.</p>
-          <div class="text-center">
-            <a href="https://www.chore-quest.com" target="_blank" class="btn btn-primary mt-auto">View ChoreQuest</a>
+        <!-- Right Column -->
+        <div class="col-12 col-md-7 pt-2">
+          <div class="container mx-3 d-flex flex-row-reverse fade-image-container" id="image-container">
+            <!-- Dark mode image -->
+            <%= image_tag "Pixar_Max-removebg-dark.webp", alt: "Full-Stack Developer Maxim", class: "img-fluid hero-image", id: "dark-image", style: "display: none; width: 75%; height: auto;", sizes: "100vw" %>
+            <!-- Light mode image -->
+            <%= image_tag "Pixar_Max-removebg.webp", alt: "Full-Stack Developer Maxim", class: "img-fluid hero-image", id: "light-image", style: "width: 75%; height: auto;", sizes: "100vw" %>
           </div>
         </div>
       </div>
     </div>
-
-
-    <!-- Three.js Portfolio Card -->
-    <div class="col-md-4 mt-3 react javascript project-card">
-      <div class="card mb-4 shadow-sm h-60">
-        <img src="<%= asset_path 'threejs_portfolio_screenshot.webp' %>" class="card-img-top img-fluid" alt="Three.js Portfolio Screenshot" style="max-width: 100%; height: 80%; width: 100%;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">Three.js 3D Portfolio</h3>
-          <p class="card-text flex-grow-1 darker-p">A 3D interactive portfolio built using Three.js, Vue and React. The project was deployed using GitHub Pages.</p>
-          <div class="text-center">
-            <a href="https://mm-japan.github.io/threejs-react-portfolio/" target="_blank" class="btn btn-primary mt-auto">View 3D Portfolio</a>
+    <!-- Featured Projects Section -->
+    <section id="projects" class="container mt-5">
+      <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="50" data-aos-easing="ease-in-out">
+        <h3 class="text-center">Featured Projects</h3>
+        <!-- Filter Buttons -->
+        <div class="filter-buttons text-center">
+          <button onclick="filterProjects('all', this)" class="btn btn-primary active">
+            <i class="fas fa-th"></i>
+          </button>
+          <button onclick="filterProjects('javascript', this)" class="btn btn-secondary">
+            <i class="fab fa-js-square"></i>
+          </button>
+          <button onclick="filterProjects('rails', this)" class="btn btn-secondary">
+            <i class="fas fa-gem"></i>
+          </button>
+          <button onclick="filterProjects('react', this)" class="btn btn-secondary">
+            <i class="fab fa-react"></i>
+          </button>
+        </div>
+        <div class="row justify-content-center">
+          <!-- Raspberry Pi Server Card -->
+          <div class="col-md-4 mt-3 rails project-card d-flex">
+            <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+              <!-- Image Container -->
+              <div style="height: 500px; overflow: hidden;">
+                <img
+              src="<%= asset_path 'raspberry-pi-server.jpg' %>"
+              alt="Raspberry Pi Server Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <!-- Card Body -->
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">Raspberry Pi Server</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              I built and hosted my own server using a Raspberry Pi, hosting all of my websites including this one on it.
+              Check out my detailed post on the setup and optimization process.
+            </p>
+            <div class="text-center mt-auto">
+              <a
+                href="https://dev.to/mm-japan/how-i-built-and-hosted-my-own-server-using-a-raspberry-pi-lessons-learned-409n"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                View Server Project
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- FigMax Card -->
-    <div class="col-md-4 mt-3 react javascript project-card">
-      <div class="card mb-4 shadow-sm h-60">
-        <img src="<%= asset_path 'FigMax (1).webp' %>" class="card-img-top" alt="FigMax Screenshot" style="max-width: 100%; height: 100%; width: 100%;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">FigMax</h3>
-          <p class="card-text flex-grow-1 darker-p">FigMax is a Figma clone built using React, TypeScript, Next.js, and Tailwind CSS, with integration of libraries like Fabric.js for canvas manipulation and Liveblocks for real-time collaboration. It allows users to create and manipulate designs interactively in the browser.</p>
-          <div class="text-center">
-            <a href="https://figma-clone-flame-one.vercel.app/" target="_blank" class="btn btn-primary mt-auto">View FigMax</a>
+      <!-- CelebrantGPT Card -->
+      <div class="col-md-4 mt-3 rails project-card d-flex">
+        <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+          <div style="height: 500px; overflow: hidden;">
+            <img
+              src="<%= asset_path 'celebrantgpt_screenshot.jpg' %>"
+              alt="CelebrantGPT Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">CelebrantGPT</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              CelebrantGPT is a web application designed to help celebrants create personalized speeches for ceremonies.
+              The app uses Redis and Sidekiq for efficient background job processing, ensuring seamless API requests and smooth user experience.
+              Built for my father who is a Celebrant to assist him in his work.
+            </p>
+            <div class="text-center mt-auto">
+              <a
+                href="https://celebrant.maximmccain.com/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                View CelebrantGPT
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- Word Quest Card -->
-    <div class="col-md-4 mt-3 rails project-card">
-      <div class="card mb-4 shadow-sm h-60">
-        <img src="<%= asset_path 'wordquest_screenshot.webp' %>" class="card-img-top img-fluid" alt="Word Quest Screenshot" style="max-width: 100%; height: auto; width: 100%;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">Word Quest</h3>
-          <p class="card-text flex-grow-1 darker-p">Word Quest is a fun and challenging word game where you try to find the longest word using a given set of letters. Built with Ruby on Rails and JavaScript.</p>
-          <div class="text-center">
-            <%= link_to 'Play Word Quest', new_game_path, class: 'btn btn-primary mt-auto' %>
+      <!-- ChoreQuest Card -->
+      <div class="col-md-4 mt-3 rails project-card d-flex">
+        <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+          <div style="height: 500px; overflow: hidden;">
+            <img
+              src="<%= asset_path 'chorequest_screenshot.webp' %>"
+              alt="ChoreQuest Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">ChoreQuest</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              ChoreQuest is a web application that gamifies daily chores by turning them into quests that users can complete to earn points and rewards.
+              This project was built using Ruby on Rails, JavaScript, and PostgreSQL.
+            </p>
+            <div class="text-center mt-auto">
+              <a
+                href="https://www.chore-quest.com"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                View ChoreQuest
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- Stumped Album Card -->
-    <div class="col-md-4 mt-3 project-card">
-      <div class="card mb-4 shadow-sm h-60">
-        <!-- Album Cover Image -->
-        <img src="<%= asset_path 'StumpedAlbumCover.webp' %>" class="card-img-top img-fluid" alt="Stumped Album Cover" style="max-width: 100%; height: auto;">
-
-        <!-- Album Info -->
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title text-center">Stumped</h3>
-          <p class="card-text flex-grow-1 darker-p">
-            "Stumped" is my first album, created using Fruity Loop Studios. It features 10 tracks, showcasing a variety of musical styles.
-          </p>
-
-          <!-- Embedded SoundCloud Player -->
-          <div class="text-center">
-            <iframe id="sc-player"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/itsmaxim/sets/stumped&color=%23ff5500&auto_play=false&show_artwork=true"
-              frameborder="no"
-              allow="autoplay"
-              allowfullscreen
-              style="width: 100%; height: 300px;">
-            </iframe>
+      <!-- Three.js Portfolio Card -->
+      <div class="col-md-4 mt-3 react javascript project-card d-flex">
+        <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+          <div style="height: 500px; overflow: hidden;">
+            <img
+              src="<%= asset_path 'threejs_portfolio_screenshot.webp' %>"
+              alt="Three.js Portfolio Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">Three.js 3D Portfolio</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              A 3D interactive portfolio built using Three.js, Vue, and React. The project was deployed using GitHub Pages.
+            </p>
+            <div class="text-center mt-auto">
+              <a
+                href="https://mm-japan.github.io/threejs-react-portfolio/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                View 3D Portfolio
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  </div>
-  </div>
-</section>
 
-<!-- Smaller Fun Projects Section -->
+      <!-- FigMax Card -->
+      <div class="col-md-4 mt-3 react javascript project-card d-flex">
+        <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+          <div style="height: 500px; overflow: hidden;">
+            <img
+              src="<%= asset_path 'FigMax (1).webp' %>"
+              alt="FigMax Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">FigMax</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              FigMax is a Figma clone built using React, TypeScript, Next.js, and Tailwind CSS, with integration of
+              libraries like Fabric.js for canvas manipulation and Liveblocks for real-time collaboration. It allows
+              users to create and manipulate designs interactively in the browser.
+            </p>
+            <div class="text-center mt-auto">
+              <a
+                href="https://figma-clone-flame-one.vercel.app/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                View FigMax
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Word Quest Card -->
+      <div class="col-md-4 mt-3 rails project-card d-flex">
+        <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+          <div style="height: 500px; overflow: hidden;">
+            <img
+              src="<%= asset_path 'wordquest_screenshot.webp' %>"
+              alt="Word Quest Screenshot"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title text-center">Word Quest</h3>
+            <p class="card-text flex-grow-1 darker-p">
+              Word Quest is a fun and challenging word game where you try to find the longest word using a given set of letters.
+              Built with Ruby on Rails and JavaScript.
+            </p>
+            <div class="text-center mt-auto">
+              <%= link_to 'Play Word Quest', new_game_path, class: 'btn btn-primary' %>
+            </div>
+                </div>
+              </div>
+            </div>
+            <!-- Stumped Album Card -->
+            <div class="col-md-4 mt-3 project-card d-flex">
+              <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
+                <div style="height: 500px; overflow: hidden;">
+                  <img
+              src="<%= asset_path 'StumpedAlbumCover.webp' %>"
+                    alt="Stumped Album Cover"
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                    />
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title text-center">Stumped</h3>
+                    <p class="card-text flex-grow-1 darker-p">
+                      "Stumped" is my first album, created using Fruity Loop Studios. It features 10 tracks,
+                      showcasing a variety of musical styles.
+                    </p>
+                    <div class="text-center">
+                      <iframe
+                id="sc-player"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/itsmaxim/sets/stumped&color=%23ff5500&auto_play=false&show_artwork=true"
+                frameborder="no"
+                allow="autoplay"
+                allowfullscreen
+                style="width: 100%; height: 300px;"
+              >
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+ <!-- end .row -->
+          </div>
+        </section>
+        <!-- Smaller Fun Projects Section -->
 <section id="smaller-projects" class="container mt-5">
-  <h3 class="text-center">Smaller Fun Projects</h2>
-  <div class="row justify-content-center">
+  <h3 class="text-center">Smaller Fun Projects</h3>
+  <!--
+    Use align-items-stretch on the row to ensure columns (and thus cards)
+    can fill the same vertical space.
+  -->
+  <div class="row justify-content-center align-items-stretch">
 
     <!-- Wordle Solver Chrome Extension Card -->
-    <div class="col-md-4 javascript project-card">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-body">
+    <div class="col-md-4 mt-3 project-card d-flex">
+      <!--
+        1) Set a fixed height (e.g. 300px).
+        2) Use flexbox to distribute space in column.
+      -->
+      <div class="card mb-4 shadow-sm d-flex flex-column" style="height: 300px;">
+        <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">Wordle Solver Chrome Extension</h3>
-          <p class="card-text flex-grow1 darker-p">A simple yet fun Chrome extension that fetches the Wordle API to provide the correct answer instantly. Enhance your Wordle experience and impress your friends with this handy tool. Built using JavaScript and browser APIs.</p>
-          <div class="text-center">
-            <a href="https://chromewebstore.google.com/detail/wordle-solver/ghabmbmbocellidodmlpnooacijjliog?authuser=0&hl=en" target="_blank" class="btn btn-primary">View Wordle Solver Extension</a>
+          <p class="card-text flex-grow-1 darker-p">
+            A simple yet fun Chrome extension that fetches the Wordle API to provide the correct answer instantly.
+            Enhance your Wordle experience and impress your friends with this handy tool. Built using JavaScript and browser APIs.
+          </p>
+          <div class="text-center mt-auto">
+            <a
+              href="https://chromewebstore.google.com/detail/wordle-solver/ghabmbmbocellidodmlpnooacijjliog?authuser=0&hl=en"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              View Wordle Solver Extension
+            </a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- JS Puzzle Game Card -->
-    <div class="col-md-4 javascript project-card">
-      <div class="card mb-4 shadow-sm">
+    <div class="col-md-4 mt-3 project-card d-flex">
+      <div class="card mb-4 shadow-sm d-flex flex-column" style="height: 300px;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">JS Puzzle Game</h3>
-          <p class="card-text flex-grow-1 darker-p">A fun and challenging JS puzzle game. Try to get the tiles in order. Built with vanilla JavaScript and HTML.</p>
-          <div class="text-center">
-            <a href="https://mm-japan.github.io/js-puzzle-game/" target="_blank" class="btn btn-primary mt-auto">Play JS Puzzle Game</a>
+          <p class="card-text flex-grow-1 darker-p">
+            A fun and challenging JS puzzle game. Try to get the tiles in order. Built with vanilla JavaScript and HTML.
+          </p>
+          <div class="text-center mt-auto">
+            <a
+              href="https://mm-japan.github.io/js-puzzle-game/"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Play JS Puzzle Game
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-     <!-- Ajax Movie Search Card -->
-    <div class="col-md-4 javascript project-card">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-body">
+    <!-- Ajax Movie Search Card -->
+    <div class="col-md-4 mt-3 project-card d-flex">
+      <div class="card mb-4 shadow-sm d-flex flex-column" style="height: 300px;">
+        <div class="card-body d-flex flex-column">
           <h3 class="card-title text-center">Ajax Movie Search</h3>
-          <p class="card-text flex-grow1 darker-p">A movie search application using Ajax and the OMDB API to display movie posters and details dynamically. Built with JavaScript, HTML, and CSS.</p>
-          <div class="text-center">
-            <a href="https://mm-japan.github.io/ajax-movie-search/" target="_blank" class="btn btn-primary">View Ajax Movie Search</a>
+          <p class="card-text flex-grow-1 darker-p">
+            A movie search application using Ajax and the OMDB API to display movie posters and details dynamically.
+            Built with JavaScript, HTML, and CSS.
+          </p>
+          <div class="text-center mt-auto">
+            <a
+              href="https://mm-japan.github.io/ajax-movie-search/"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              View Ajax Movie Search
+            </a>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="container my-5 pb-5 text-center">
-  <div class="mb-5">
-    <h3>Contact Me</h3>
-    <div class="d-flex justify-content-center">
-      <!-- Email Icon -->
-      <a href="mailto:itsmaximuk@gmail.com" class="contact text-decoration-none text-dark mx-3">
-        <i class="fas fa-envelope fa-2x" ></i>
-      </a>
-      <!-- LinkedIn Icon -->
-      <a href="https://www.linkedin.com/in/max-mccain-b39236198/" target="_blank" class="contact text-decoration-none text-dark mx-3">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <!-- GitHub Icon -->
-      <a href="https://github.com/MM-Japan" target="_blank" class="contact text-decoration-none text-dark mx-3">
-        <i class="fab fa-github fa-2x"></i>
-      </a>
-      <!-- CV Icon -->
-      <!-- CV Icon -->
-      <a href="/cv/Maxim-McCain-CV.pdf" target="_blank" class="contact text-decoration-none text-dark mx-3" download>
-        <i class="fa-solid fa-file-arrow-down fa-2x"></i>
-      </a>
-    </div>
-  </div>
-</section>
-</div>
+        <!-- Contact -->
+        <section id="contact" class="container my-5 pb-5 text-center">
+          <div class="mb-5">
+            <h3>Contact Me</h3>
+            <div class="d-flex justify-content-center">
+              <!-- Email Icon -->
+              <a href="mailto:itsmaximuk@gmail.com" class="contact text-decoration-none text-dark mx-3">
+                <i class="fas fa-envelope fa-2x" ></i>
+              </a>
+              <!-- LinkedIn Icon -->
+              <a href="https://www.linkedin.com/in/max-mccain-b39236198/" target="_blank" class="contact text-decoration-none text-dark mx-3">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+              <!-- GitHub Icon -->
+              <a href="https://github.com/MM-Japan" target="_blank" class="contact text-decoration-none text-dark mx-3">
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+              <!-- CV Icon -->
+              <!-- CV Icon -->
+              <a href="/cv/Maxim-McCain-CV.pdf" target="_blank" class="contact text-decoration-none text-dark mx-3" download>
+                <i class="fa-solid fa-file-arrow-down fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
