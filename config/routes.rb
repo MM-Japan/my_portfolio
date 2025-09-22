@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
   get 'pages/secrets'
+  get 'chronocrow', to: 'pages#chrono_crow', as: :chrono_crow
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

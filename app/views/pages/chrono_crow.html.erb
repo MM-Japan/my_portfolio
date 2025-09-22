@@ -1,0 +1,117 @@
+<div class="container py-5 chrono-crow-page">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h1 class="text-center mb-4">Chrono Crow</h1>
+      <p class="lead text-center text-muted mb-4">
+        Chrono Crow is an experimental endless runner made in Unity. Guide the time-travelling crow through temporal rifts,
+        dodge obstacles, and collect gears to charge your chrono dash.
+      </p>
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <h2 class="h5">How to Play</h2>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Press the <strong>spacebar</strong> or <strong>left-click</strong> to flap.</li>
+                <li class="mb-2">Hold to glide and weave between anomalies.</li>
+                <li class="mb-2">Collect gears to build your chrono meter and unleash a burst of speed.</li>
+                <li>Hit an obstacle and the timeline resets—try for a better distance!</li>
+              </ul>
+            </div>
+            <div class="col-lg-8">
+              <link rel="stylesheet" href="<%= File.join(@chronocrow_root_path, 'TemplateData', 'style.css') %>">
+              <div id="unity-container" class="unity-desktop">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                  <div id="unity-logo"></div>
+                  <div id="unity-progress-bar-empty">
+                    <div id="unity-progress-bar-full"></div>
+                  </div>
+                </div>
+                <div id="unity-warning"></div>
+                <div id="unity-footer">
+                  <div id="unity-fullscreen-button"></div>
+                  <div id="unity-mobile-warning">WebGL builds are not supported on mobile devices.</div>
+                </div>
+              </div>
+              <script src="<%= @chronocrow_loader_path %>"></script>
+              <script>
+                const canvas = document.querySelector("#unity-canvas");
+                const container = document.querySelector("#unity-container");
+                const loadingBar = document.querySelector("#unity-loading-bar");
+                const progressBarFull = document.querySelector("#unity-progress-bar-full");
+                const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+                const warningBanner = document.querySelector("#unity-warning");
+                warningBanner.style.display = 'none';
+
+                function updateBannerVisibility() {
+                  warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+                }
+
+                function unityShowBanner(msg, type) {
+                  const div = document.createElement('div');
+                  div.innerHTML = msg;
+                  div.className = 'unity-banner ' + (type || '');
+                  warningBanner.appendChild(div);
+                  if (type === 'warning') {
+                    setTimeout(() => {
+                      warningBanner.removeChild(div);
+                      updateBannerVisibility();
+                    }, 5000);
+                  } else if (type === 'error') {
+                    div.addEventListener('click', () => {
+                      warningBanner.removeChild(div);
+                      updateBannerVisibility();
+                    });
+                  }
+                  updateBannerVisibility();
+                }
+
+                const config = {
+                  dataUrl: "<%= @chronocrow_data_path %>",
+                  frameworkUrl: "<%= @chronocrow_framework_path %>",
+                  codeUrl: "<%= @chronocrow_wasm_path %>",
+                  streamingAssetsUrl: "<%= @chronocrow_streaming_assets_path %>",
+                  companyName: 'Chrono Crow Team',
+                  productName: 'Chrono Crow',
+                  productVersion: '0.1',
+                  showBanner: unityShowBanner
+                };
+
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                  container.className = 'unity-mobile';
+                  unityShowBanner('WebGL builds are not supported on mobile devices.', 'warning');
+                  config.devicePixelRatio = 1;
+                } else {
+                  canvas.style.maxWidth = '960px';
+                  canvas.style.width = '100%';
+                  canvas.style.height = '600px';
+                  canvas.style.margin = '0 auto';
+                }
+
+                loadingBar.style.display = 'block';
+
+                createUnityInstance(canvas, config, (progress) => {
+                  progressBarFull.style.width = 100 * progress + '%';
+                })
+                  .then((unityInstance) => {
+                    loadingBar.style.display = 'none';
+                    fullscreenButton.onclick = () => {
+                      unityInstance.SetFullscreen(1);
+                    };
+                  })
+                  .catch((message) => {
+                    unityShowBanner(message, 'error');
+                  });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-muted small">
+        Having trouble loading the build? Try refreshing the page or clearing your browser cache. Unity WebGL builds can take
+        a moment to compile on first load.
+      </p>
+    </div>
+  </div>
+</div>
