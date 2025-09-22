@@ -13,7 +13,7 @@ function filterProjects(category, element) {
 
   var projects = projectsSection.querySelectorAll('.project-card');
   var buttons = filterButtons ? filterButtons.querySelectorAll('.btn') : [];
-  var filterDependents = projectsSection.querySelectorAll('.filter-dependent');
+  var filterDependents = document.querySelectorAll('.filter-dependent');
   var hasVisibleProject = false;
 
   buttons.forEach(function(btn) {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     project.classList.add('project-hidden');
   });
 
-  var filterDependents = projectsSection.querySelectorAll('.filter-dependent');
+  var filterDependents = document.querySelectorAll('.filter-dependent');
   filterDependents.forEach(function(element) {
     element.classList.add('project-hidden');
   });
