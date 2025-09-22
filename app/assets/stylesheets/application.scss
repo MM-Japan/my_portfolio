@@ -15,7 +15,11 @@
  *= require word_game
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+.project-hidden {
+  display: none !important;
+}
 
  body {
   font-family: Arial, sans-serif;
