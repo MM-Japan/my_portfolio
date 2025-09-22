@@ -59,31 +59,3 @@ function filterProjects(category, element) {
 
 // Make the function globally accessible
 window.filterProjects = filterProjects;
-
-document.addEventListener('DOMContentLoaded', function() {
-  var filterButtons = document.querySelector('.filter-buttons');
-  var message = document.getElementById('project-filter-message');
-  if (!filterButtons && !message) {
-    return;
-  }
-
-  var projectsSection = document.querySelector('#projects');
-  if (!projectsSection) {
-    return;
-  }
-
-  var projects = projectsSection.querySelectorAll('.project-card');
-  projects.forEach(function(project) {
-    project.classList.add('project-hidden');
-  });
-
-  var filterDependents = document.querySelectorAll('.filter-dependent');
-  filterDependents.forEach(function(element) {
-    element.classList.add('project-hidden');
-  });
-
-  if (message) {
-    message.style.display = '';
-    message.textContent = 'Select Web or Game to explore featured work.';
-  }
-});
