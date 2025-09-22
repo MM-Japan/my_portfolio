@@ -15,7 +15,22 @@
  *= require word_game
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+.project-hidden {
+  display: none !important;
+}
+
+.filter-fade-target {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.filter-fade-visible {
+  opacity: 1;
+  transform: none;
+}
 
  body {
   font-family: Arial, sans-serif;

@@ -1,8 +1,53 @@
+var scheduleFrame = (typeof window !== 'undefined' && window.requestAnimationFrame)
+  ? window.requestAnimationFrame.bind(window)
+  : function(callback) {
+      return setTimeout(callback, 16);
+    };
+
+function ensureFadeTarget(element) {
+  if (element && !element.classList.contains('filter-fade-target')) {
+    element.classList.add('filter-fade-target');
+  }
+}
+
+function showWithFade(element) {
+  if (!element) {
+    return;
+  }
+
+  ensureFadeTarget(element);
+
+  if (!element.classList.contains('project-hidden')) {
+    element.classList.add('filter-fade-visible');
+    return;
+  }
+
+  element.classList.remove('project-hidden');
+  element.classList.remove('filter-fade-visible');
+
+  scheduleFrame(function() {
+    element.classList.add('filter-fade-visible');
+  });
+}
+
+function hideWithFade(element) {
+  if (!element) {
+    return;
+  }
+
+  element.classList.remove('filter-fade-visible');
+
+  if (!element.classList.contains('project-hidden')) {
+    element.classList.add('project-hidden');
+  }
+}
+
 // Function to filter projects based on category and highlight the active button
 function filterProjects(category, element) {
   var projects = document.querySelectorAll('.project-card');
   var buttons = document.querySelectorAll('.filter-buttons .btn');
   var message = document.getElementById('project-filter-message');
+  var filterDependents = document.querySelectorAll('.filter-dependent');
   var hasVisibleProject = false;
 
   buttons.forEach(function(btn) {
@@ -18,13 +63,25 @@ function filterProjects(category, element) {
   }
 
   projects.forEach(function(project) {
+    ensureFadeTarget(project);
+
     if (category && project.classList.contains(category)) {
       hasVisibleProject = true;
-      project.style.display = project.dataset.defaultDisplay || '';
+      showWithFade(project);
     } else {
-      project.style.display = 'none';
+      hideWithFade(project);
     }
   });
+
+  if (category && hasVisibleProject) {
+    filterDependents.forEach(function(dependent) {
+      showWithFade(dependent);
+    });
+  } else {
+    filterDependents.forEach(function(dependent) {
+      hideWithFade(dependent);
+    });
+  }
 
   if (message) {
     if (hasVisibleProject) {
@@ -42,10 +99,16 @@ window.filterProjects = filterProjects;
 document.addEventListener('DOMContentLoaded', function() {
   var projects = document.querySelectorAll('.project-card');
   projects.forEach(function(project) {
-    if (!project.dataset.defaultDisplay) {
-      project.dataset.defaultDisplay = window.getComputedStyle(project).display;
-    }
-    project.style.display = 'none';
+    project.classList.add('project-hidden');
+    project.classList.remove('filter-fade-visible');
+    ensureFadeTarget(project);
+  });
+
+  var filterDependents = document.querySelectorAll('.filter-dependent');
+  filterDependents.forEach(function(element) {
+    element.classList.add('project-hidden');
+    element.classList.remove('filter-fade-visible');
+    ensureFadeTarget(element);
   });
 
   var message = document.getElementById('project-filter-message');
