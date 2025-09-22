@@ -17,27 +17,17 @@
 
 @import "bootstrap";
 
-.project-card__media {
-  /*
-   * Adjust `--project-card-media-ratio` to update the shared media aspect ratio
-   * across every featured project card in one place.
-   */
-  --project-card-media-ratio: 4 / 5;
-  position: relative;
-  width: 100%;
-  aspect-ratio: var(--project-card-media-ratio);
-  overflow: hidden;
-}
-
-.project-card__media img,
-.project-card__media-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  --project-card-compact-min-height: 18.75rem; /* 300px baseline */
+  --project-card-compact-aspect-ratio: 4 / 3;
 }
 
 .project-hidden {
   display: none !important;
+}
+
+.project-card--compact {
+  min-height: var(--project-card-compact-min-height);
+  aspect-ratio: var(--project-card-compact-aspect-ratio);
 }
 
  body {
