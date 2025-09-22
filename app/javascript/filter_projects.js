@@ -3,6 +3,7 @@ function filterProjects(category, element) {
   var projects = document.querySelectorAll('.project-card');
   var buttons = document.querySelectorAll('.filter-buttons .btn');
   var message = document.getElementById('project-filter-message');
+  var filterDependents = document.querySelectorAll('.filter-dependent');
   var hasVisibleProject = false;
 
   buttons.forEach(function(btn) {
@@ -26,6 +27,16 @@ function filterProjects(category, element) {
     }
   });
 
+  if (category) {
+    filterDependents.forEach(function(element) {
+      element.classList.remove('project-hidden');
+    });
+  } else {
+    filterDependents.forEach(function(element) {
+      element.classList.add('project-hidden');
+    });
+  }
+
   if (message) {
     if (hasVisibleProject) {
       message.style.display = 'none';
@@ -43,6 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var projects = document.querySelectorAll('.project-card');
   projects.forEach(function(project) {
     project.classList.add('project-hidden');
+  });
+
+  var filterDependents = document.querySelectorAll('.filter-dependent');
+  filterDependents.forEach(function(element) {
+    element.classList.add('project-hidden');
   });
 
   var message = document.getElementById('project-filter-message');
