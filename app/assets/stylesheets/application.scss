@@ -162,12 +162,8 @@ a:hover {
 }
 
 .chrono-crow-player-frame {
-  width: min(
-    100%,
-    calc(100vw - var(--chrono-crow-padding) * 2),
-    calc((100vh - var(--chrono-crow-padding) * 2) * 1.6),
-    1920px
-  );
+  width: #{'min(calc(100vw - var(--chrono-crow-padding) * 2), 800px)'};
+
   aspect-ratio: 16 / 10;
   position: relative;
   border-radius: clamp(0.75rem, 2vw, 1rem);
