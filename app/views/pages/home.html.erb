@@ -22,26 +22,29 @@
           </div>
         </div>
       </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-md-8">
+          <div class="filter-buttons text-center">
+            <button onclick="filterProjects('web', this)" class="btn btn-primary btn-lg mx-1" aria-label="Show web projects">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <span class="filter-label">Web Projects</span>
+            </button>
+            <button onclick="filterProjects('game', this)" class="btn btn-primary btn-lg mx-1" aria-label="Show game projects">
+              <i class="fas fa-gamepad" aria-hidden="true"></i>
+              <span class="filter-label">Game Projects</span>
+            </button>
+          </div>
+          <p class="text-center text-muted mt-3" id="project-filter-message">
+            Select Web or Game to explore featured work.
+          </p>
+        </div>
+      </div>
     </div>
     <!-- Featured Projects Section -->
     <section id="projects" class="container mt-5">
       <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="50" data-aos-easing="ease-in-out">
-        <h3 class="text-center filter-dependent project-hidden">Featured Projects</h3>
-        <!-- Filter Buttons -->
-        <div class="filter-buttons text-center">
-          <button onclick="filterProjects('web', this)" class="btn btn-primary btn-lg mx-1" aria-label="Show web projects">
-            <i class="fas fa-code" aria-hidden="true"></i>
-            <span class="filter-label">Web Projects</span>
-          </button>
-          <button onclick="filterProjects('game', this)" class="btn btn-primary btn-lg mx-1" aria-label="Show game projects">
-            <i class="fas fa-gamepad" aria-hidden="true"></i>
-            <span class="filter-label">Game Projects</span>
-          </button>
-        </div>
-        <p class="text-center text-muted mt-3" id="project-filter-message">
-          Select Web or Game to explore featured work.
-        </p>
-        <div class="row justify-content-center filter-dependent project-hidden">
+        <h3 class="text-center filter-dependent">Featured Projects</h3>
+        <div class="row justify-content-center filter-dependent">
           <!-- Raspberry Pi Server Card -->
           <div class="col-md-4 mt-3 web project-card d-flex">
             <div class="card mb-4 shadow-sm h-100 d-flex flex-column">
