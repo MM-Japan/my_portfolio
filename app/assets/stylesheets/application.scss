@@ -152,48 +152,30 @@ a:hover {
 }
 
 .chrono-crow-page {
+  --chrono-crow-padding: clamp(1rem, 3vw, 3rem);
   background: radial-gradient(circle at top, rgba(19, 21, 34, 0.95) 0%, rgba(7, 8, 14, 0.98) 60%, #05060a 100%);
-}
-
-.chrono-crow-layout {
+  min-height: 100vh;
+  padding: var(--chrono-crow-padding);
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  margin: 0 auto;
-  max-width: calc(1920px + 24rem);
-  padding: 0 clamp(1rem, 4vw, 3rem);
-}
-
-.chrono-crow-info {
-  flex: 0 1 22rem;
-  max-width: 24rem;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  padding: clamp(1.5rem, 3vw, 2rem);
-}
-
-.chrono-crow-player {
-  flex: 1 1 40rem;
-  display: flex;
-  justify-content: center;
-  width: 100%;
 }
 
 .chrono-crow-player-frame {
-  width: 100%;
-  max-width: 1920px;
-  aspect-ratio: 16 / 9;
+  width: min(
+    100%,
+    calc(100vw - var(--chrono-crow-padding) * 2),
+    calc((100vh - var(--chrono-crow-padding) * 2) * 1.6),
+    1920px
+  );
+  aspect-ratio: 16 / 10;
   position: relative;
-  border-radius: 1rem;
+  border-radius: clamp(0.75rem, 2vw, 1rem);
   overflow: hidden;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
   background: #000;
   margin: 0 auto;
+  display: flex;
 }
 
 .chrono-crow-player-frame canvas {
@@ -203,31 +185,12 @@ a:hover {
   background-color: #000;
 }
 
-.chrono-crow-player #unity-footer {
+#unity-container {
+  width: 100%;
+}
+
+#unity-container #unity-footer {
   gap: 1rem;
-}
-
-.chrono-crow-rotate-tip {
-  background: rgba(13, 110, 253, 0.1);
-  border: 1px solid rgba(13, 110, 253, 0.25);
-  color: #b5d5ff;
-}
-
-@media (max-width: 1199.98px) {
-  .chrono-crow-player-frame {
-    border-radius: 0.75rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .chrono-crow-info {
-    text-align: left;
-  }
-
-  .chrono-crow-player {
-    flex: 1 1 100%;
-  }
 }
 
 /* Dark Mode */

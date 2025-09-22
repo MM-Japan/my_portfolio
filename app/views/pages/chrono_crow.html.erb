@@ -1,143 +1,107 @@
-<div class="chrono-crow-page py-5">
-  <div class="container-xl text-center mb-5">
-    <h1 class="mb-4">Chrono Crow</h1>
-    <p class="lead text-muted">
-      Chrono Crow is an experimental endless runner made in Unity. Guide the time-travelling crow through temporal rifts,
-      dodge obstacles, and collect gears to charge your chrono dash.
-    </p>
-  </div>
-  <div class="chrono-crow-layout container-fluid">
-    <div class="chrono-crow-info">
-      <h2 class="h5">How to Play</h2>
-      <ul class="list-unstyled small text-muted mb-4">
-        <li class="mb-2">Press the <strong>spacebar</strong> or <strong>left-click</strong> to flap.</li>
-        <li class="mb-2">Hold to glide and weave between anomalies.</li>
-        <li class="mb-2">Collect gears to build your chrono meter and unleash a burst of speed.</li>
-        <li>Hit an obstacle and the timeline resets—try for a better distance!</li>
-      </ul>
-      <div class="alert alert-info chrono-crow-rotate-tip">
-        Rotate your device for a full-width experience on mobile.
-      </div>
-    </div>
-    <div class="chrono-crow-player">
-      <link rel="stylesheet" href="<%= File.join(@chronocrow_root_path, 'TemplateData', 'style.css') %>">
-      <div class="chrono-crow-player-frame">
-        <div id="unity-container" class="unity-desktop">
-          <canvas id="unity-canvas"></canvas>
-          <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
-            <div id="unity-progress-bar-empty">
-              <div id="unity-progress-bar-full"></div>
-            </div>
-          </div>
-          <div id="unity-warning"></div>
-          <div id="unity-footer">
-            <div id="unity-fullscreen-button"></div>
-            <div id="unity-mobile-warning">Best experienced in landscape orientation on mobile.</div>
-          </div>
+<div class="chrono-crow-page">
+  <link rel="stylesheet" href="<%= File.join(@chronocrow_root_path, 'TemplateData', 'style.css') %>">
+  <div class="chrono-crow-player-frame">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
       </div>
+      <div id="unity-warning"></div>
+      <div id="unity-footer">
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-mobile-warning">Best experienced in landscape orientation on mobile.</div>
+      </div>
     </div>
   </div>
-  <div class="container-xl">
-    <script src="<%= @chronocrow_loader_path %>"></script>
-    <script>
-      const canvas = document.querySelector('#unity-canvas');
-      const container = document.querySelector('#unity-container');
-      const layout = document.querySelector('.chrono-crow-layout');
-      const frame = document.querySelector('.chrono-crow-player-frame');
-      const loadingBar = document.querySelector('#unity-loading-bar');
-      const progressBarFull = document.querySelector('#unity-progress-bar-full');
-      const fullscreenButton = document.querySelector('#unity-fullscreen-button');
-      const warningBanner = document.querySelector('#unity-warning');
-      warningBanner.style.display = 'none';
+  <script src="<%= @chronocrow_loader_path %>"></script>
+  <script>
+    const canvas = document.querySelector('#unity-canvas');
+    const container = document.querySelector('#unity-container');
+    const frame = document.querySelector('.chrono-crow-player-frame');
+    const loadingBar = document.querySelector('#unity-loading-bar');
+    const progressBarFull = document.querySelector('#unity-progress-bar-full');
+    const fullscreenButton = document.querySelector('#unity-fullscreen-button');
+    const warningBanner = document.querySelector('#unity-warning');
+    warningBanner.style.display = 'none';
 
-      function updateBannerVisibility() {
-        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-      }
+    function updateBannerVisibility() {
+      warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+    }
 
-      function unityShowBanner(msg, type) {
-        const div = document.createElement('div');
-        div.innerHTML = msg;
-        div.className = 'unity-banner ' + (type || '');
-        warningBanner.appendChild(div);
-        if (type === 'warning') {
-          setTimeout(() => {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        } else if (type === 'error') {
-          div.addEventListener('click', () => {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          });
-        }
-        updateBannerVisibility();
-      }
-
-      const config = {
-        dataUrl: "<%= @chronocrow_data_path %>",
-        frameworkUrl: "<%= @chronocrow_framework_path %>",
-        codeUrl: "<%= @chronocrow_wasm_path %>",
-        streamingAssetsUrl: "<%= @chronocrow_streaming_assets_path %>",
-        companyName: 'Chrono Crow Team',
-        productName: 'Chrono Crow',
-        productVersion: '0.1',
-        showBanner: unityShowBanner
-      };
-
-      const aspectRatio = 16 / 9;
-
-      function applyResponsiveSizing() {
-        const viewportWidth = window.innerWidth;
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || viewportWidth < 992;
-        const maxWidth = 1920;
-        const availableWidth = Math.min(layout.clientWidth, viewportWidth);
-
-        const targetWidth = Math.min(availableWidth, maxWidth);
-
-        if (isMobile) {
-          container.classList.remove('unity-desktop');
-          container.classList.add('unity-mobile');
-          frame.style.width = targetWidth + 'px';
-          canvas.style.maxWidth = '100%';
-          canvas.style.maxHeight = '100vh';
-          canvas.width = targetWidth;
-          canvas.height = Math.round(targetWidth / aspectRatio);
-          config.devicePixelRatio = 1;
-        } else {
-          container.classList.add('unity-desktop');
-          container.classList.remove('unity-mobile');
-          frame.style.width = targetWidth + 'px';
-          canvas.style.maxWidth = '100%';
-          canvas.style.maxHeight = '';
-          canvas.width = maxWidth;
-          canvas.height = Math.round(maxWidth / aspectRatio);
-          config.devicePixelRatio = window.devicePixelRatio || 1;
-        }
-      }
-
-      applyResponsiveSizing();
-      window.addEventListener('resize', applyResponsiveSizing);
-
-      loadingBar.style.display = 'block';
-
-      createUnityInstance(canvas, config, (progress) => {
-        progressBarFull.style.width = 100 * progress + '%';
-      })
-        .then((unityInstance) => {
-          loadingBar.style.display = 'none';
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        })
-        .catch((message) => {
-          unityShowBanner(message, 'error');
+    function unityShowBanner(msg, type) {
+      const div = document.createElement('div');
+      div.innerHTML = msg;
+      div.className = 'unity-banner ' + (type || '');
+      warningBanner.appendChild(div);
+      if (type === 'warning') {
+        setTimeout(() => {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      } else if (type === 'error') {
+        div.addEventListener('click', () => {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
         });
-    </script>
-    <p class="text-center text-muted small mt-4">
-      Having trouble loading the build? Try refreshing the page or clearing your browser cache. Unity WebGL builds can take
-      a moment to compile on first load.
-    </p>
-  </div>
+      }
+      updateBannerVisibility();
+    }
+
+    const config = {
+      dataUrl: "<%= @chronocrow_data_path %>",
+      frameworkUrl: "<%= @chronocrow_framework_path %>",
+      codeUrl: "<%= @chronocrow_wasm_path %>",
+      streamingAssetsUrl: "<%= @chronocrow_streaming_assets_path %>",
+      companyName: 'Chrono Crow Team',
+      productName: 'Chrono Crow',
+      productVersion: '0.1',
+      showBanner: unityShowBanner
+    };
+
+    const aspectRatio = 16 / 10;
+
+    function applyResponsiveSizing() {
+      const viewportWidth = window.innerWidth;
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || viewportWidth < 992;
+      const pixelRatio = isMobile ? 1 : (window.devicePixelRatio || 1);
+
+      if (isMobile) {
+        container.classList.remove('unity-desktop');
+        container.classList.add('unity-mobile');
+      } else {
+        container.classList.add('unity-desktop');
+        container.classList.remove('unity-mobile');
+      }
+
+      const frameRect = frame.getBoundingClientRect();
+      const frameHeight = frameRect.height || (frameRect.width / aspectRatio);
+      config.devicePixelRatio = pixelRatio;
+      canvas.style.maxWidth = '100%';
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.width = Math.round(frameRect.width * pixelRatio);
+      canvas.height = Math.round(frameHeight * pixelRatio);
+    }
+
+    applyResponsiveSizing();
+    window.addEventListener('resize', applyResponsiveSizing);
+
+    loadingBar.style.display = 'block';
+
+    createUnityInstance(canvas, config, (progress) => {
+      progressBarFull.style.width = 100 * progress + '%';
+    })
+      .then((unityInstance) => {
+        loadingBar.style.display = 'none';
+        fullscreenButton.onclick = () => {
+          unityInstance.SetFullscreen(1);
+        };
+      })
+      .catch((message) => {
+        unityShowBanner(message, 'error');
+      });
+  </script>
 </div>
