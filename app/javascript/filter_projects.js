@@ -3,6 +3,7 @@ function filterProjects(category, element) {
   var projects = document.querySelectorAll('.project-card');
   var buttons = document.querySelectorAll('.filter-buttons .btn');
   var message = document.getElementById('project-filter-message');
+  var filterDependents = document.querySelectorAll('.filter-dependent');
   var hasVisibleProject = false;
 
   buttons.forEach(function(btn) {
@@ -20,11 +21,21 @@ function filterProjects(category, element) {
   projects.forEach(function(project) {
     if (category && project.classList.contains(category)) {
       hasVisibleProject = true;
-      project.style.display = project.dataset.defaultDisplay || '';
+      project.classList.remove('project-hidden');
     } else {
-      project.style.display = 'none';
+      project.classList.add('project-hidden');
     }
   });
+
+  if (category) {
+    filterDependents.forEach(function(element) {
+      element.classList.remove('project-hidden');
+    });
+  } else {
+    filterDependents.forEach(function(element) {
+      element.classList.add('project-hidden');
+    });
+  }
 
   if (message) {
     if (hasVisibleProject) {
@@ -42,10 +53,12 @@ window.filterProjects = filterProjects;
 document.addEventListener('DOMContentLoaded', function() {
   var projects = document.querySelectorAll('.project-card');
   projects.forEach(function(project) {
-    if (!project.dataset.defaultDisplay) {
-      project.dataset.defaultDisplay = window.getComputedStyle(project).display;
-    }
-    project.style.display = 'none';
+    project.classList.add('project-hidden');
+  });
+
+  var filterDependents = document.querySelectorAll('.filter-dependent');
+  filterDependents.forEach(function(element) {
+    element.classList.add('project-hidden');
   });
 
   var message = document.getElementById('project-filter-message');
