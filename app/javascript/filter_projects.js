@@ -1,9 +1,19 @@
 // Function to filter projects based on category and highlight the active button
 function filterProjects(category, element) {
-  var projects = document.querySelectorAll('.project-card');
-  var buttons = document.querySelectorAll('.filter-buttons .btn');
+  var filterButtons = document.querySelector('.filter-buttons');
   var message = document.getElementById('project-filter-message');
-  var filterDependents = document.querySelectorAll('.filter-dependent');
+  if (!filterButtons && !message) {
+    return;
+  }
+
+  var projectsSection = document.querySelector('#projects');
+  if (!projectsSection) {
+    return;
+  }
+
+  var projects = projectsSection.querySelectorAll('.project-card');
+  var buttons = filterButtons ? filterButtons.querySelectorAll('.btn') : [];
+  var filterDependents = projectsSection.querySelectorAll('.filter-dependent');
   var hasVisibleProject = false;
 
   buttons.forEach(function(btn) {
@@ -51,17 +61,27 @@ function filterProjects(category, element) {
 window.filterProjects = filterProjects;
 
 document.addEventListener('DOMContentLoaded', function() {
-  var projects = document.querySelectorAll('.project-card');
+  var filterButtons = document.querySelector('.filter-buttons');
+  var message = document.getElementById('project-filter-message');
+  if (!filterButtons && !message) {
+    return;
+  }
+
+  var projectsSection = document.querySelector('#projects');
+  if (!projectsSection) {
+    return;
+  }
+
+  var projects = projectsSection.querySelectorAll('.project-card');
   projects.forEach(function(project) {
     project.classList.add('project-hidden');
   });
 
-  var filterDependents = document.querySelectorAll('.filter-dependent');
+  var filterDependents = projectsSection.querySelectorAll('.filter-dependent');
   filterDependents.forEach(function(element) {
     element.classList.add('project-hidden');
   });
 
-  var message = document.getElementById('project-filter-message');
   if (message) {
     message.style.display = '';
     message.textContent = 'Select Web or Game to explore featured work.';
