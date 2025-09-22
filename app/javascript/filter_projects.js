@@ -1,3 +1,47 @@
+var scheduleFrame = (typeof window !== 'undefined' && window.requestAnimationFrame)
+  ? window.requestAnimationFrame.bind(window)
+  : function(callback) {
+      return setTimeout(callback, 16);
+    };
+
+function ensureFadeTarget(element) {
+  if (element && !element.classList.contains('filter-fade-target')) {
+    element.classList.add('filter-fade-target');
+  }
+}
+
+function showWithFade(element) {
+  if (!element) {
+    return;
+  }
+
+  ensureFadeTarget(element);
+
+  if (!element.classList.contains('project-hidden')) {
+    element.classList.add('filter-fade-visible');
+    return;
+  }
+
+  element.classList.remove('project-hidden');
+  element.classList.remove('filter-fade-visible');
+
+  scheduleFrame(function() {
+    element.classList.add('filter-fade-visible');
+  });
+}
+
+function hideWithFade(element) {
+  if (!element) {
+    return;
+  }
+
+  element.classList.remove('filter-fade-visible');
+
+  if (!element.classList.contains('project-hidden')) {
+    element.classList.add('project-hidden');
+  }
+}
+
 // Function to filter projects based on category and highlight the active button
 function filterProjects(category, element) {
   var filterButtons = document.querySelector('.filter-buttons');
@@ -29,21 +73,23 @@ function filterProjects(category, element) {
   }
 
   projects.forEach(function(project) {
+    ensureFadeTarget(project);
+
     if (category && project.classList.contains(category)) {
       hasVisibleProject = true;
-      project.classList.remove('project-hidden');
+      showWithFade(project);
     } else {
-      project.classList.add('project-hidden');
+      hideWithFade(project);
     }
   });
 
-  if (category) {
-    filterDependents.forEach(function(element) {
-      element.classList.remove('project-hidden');
+  if (category && hasVisibleProject) {
+    filterDependents.forEach(function(dependent) {
+      showWithFade(dependent);
     });
   } else {
-    filterDependents.forEach(function(element) {
-      element.classList.add('project-hidden');
+    filterDependents.forEach(function(dependent) {
+      hideWithFade(dependent);
     });
   }
 
@@ -75,11 +121,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var projects = projectsSection.querySelectorAll('.project-card');
   projects.forEach(function(project) {
     project.classList.add('project-hidden');
+    project.classList.remove('filter-fade-visible');
+    ensureFadeTarget(project);
   });
 
   var filterDependents = document.querySelectorAll('.filter-dependent');
   filterDependents.forEach(function(element) {
     element.classList.add('project-hidden');
+    element.classList.remove('filter-fade-visible');
+    ensureFadeTarget(element);
   });
 
   if (message) {
