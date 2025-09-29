@@ -44,6 +44,22 @@
   object-fit: cover;
 }
 
+.project-card__media--tabatinga {
+  background: radial-gradient(circle at 30% 30%, #3fa55d, #1f5a34 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.project-card__media-logo {
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
  body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
