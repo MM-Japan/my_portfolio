@@ -198,6 +198,42 @@ a:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.emirates-page {
+  background: linear-gradient(135deg, #0f1a2d 0%, #162544 60%, #1e3358 100%);
+  color: #f5f7ff;
+}
+
+.emirates-page .display-4 {
+  color: #f8fbff;
+  font-weight: 600;
+}
+
+.emirates-page p {
+  color: rgba(243, 247, 255, 0.8);
+}
+
+.emirates-page .image-card {
+  background: rgba(17, 29, 51, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.emirates-page .feature-card {
+  background: rgba(12, 22, 41, 0.85);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1.5rem 3rem rgba(6, 15, 30, 0.35);
+  color: #f5f7ff;
+}
+
+.emirates-page .feature-card h2 {
+  color: #f8d377;
+}
+
+.emirates-page .feature-card p {
+  color: rgba(231, 238, 255, 0.85);
+}
+
 .filter-buttons .btn:hover,
 .filter-buttons .btn:focus {
   transform: translateY(-2px);

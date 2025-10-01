@@ -25,4 +25,7 @@ class PagesController < ApplicationController
     @chronocrow_wasm_path = File.join(@chronocrow_root_path, 'Build', "#{build_basename}.wasm")
     @chronocrow_streaming_assets_path = File.join(@chronocrow_root_path, 'StreamingAssets')
   end
+
+  def emirates_skywards
+  end
 end

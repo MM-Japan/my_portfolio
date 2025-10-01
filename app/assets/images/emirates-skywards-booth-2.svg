@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <radialGradient id="bg2" cx="0.5" cy="0.4" r="0.9">
+      <stop offset="0%" stop-color="#1d2f4d" />
+      <stop offset="100%" stop-color="#0c1528" />
+    </radialGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f7dba7" />
+      <stop offset="100%" stop-color="#f4b942" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg2)" />
+  <g stroke="#ffffff" stroke-opacity="0.2" stroke-width="2">
+    <path d="M0 140 L1600 140" />
+    <path d="M0 320 L1600 320" />
+    <path d="M0 720 L1600 720" />
+    <path d="M180 0 L180 1000" />
+    <path d="M800 0 L800 1000" />
+    <path d="M1420 0 L1420 1000" />
+  </g>
+  <g font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" fill="#ffffff">
+    <text x="800" y="140" font-size="60" text-anchor="middle" font-weight="600">Emirates Skywards Unity Game Suite</text>
+    <text x="800" y="210" font-size="34" text-anchor="middle" fill="#dfe8ff">Event-ready gameplay built with PlayFab integration</text>
+  </g>
+  <g transform="translate(220,340)">
+    <rect x="0" y="0" width="520" height="420" rx="26" fill="#18243c" opacity="0.9" />
+    <text x="260" y="90" font-size="36" fill="#f8e5b0" font-weight="600" text-anchor="middle">Tiered Quiz Stage</text>
+    <text x="260" y="160" font-size="24" fill="#f7f0d2" text-anchor="middle">Questions adapt to tokens collected in-game.</text>
+    <text x="260" y="220" font-size="24" fill="#f7f0d2" text-anchor="middle">Supports Bronze, Silver, Gold, and Platinum paths.</text>
+    <text x="260" y="280" font-size="24" fill="#f7f0d2" text-anchor="middle">Customizable via companion editor.</text>
+  </g>
+  <g transform="translate(900,340)">
+    <rect x="0" y="0" width="480" height="420" rx="26" fill="#172033" opacity="0.9" />
+    <text x="240" y="90" font-size="36" fill="#f8e5b0" font-weight="600" text-anchor="middle">Companion App</text>
+    <text x="240" y="160" font-size="24" fill="#f7f0d2" text-anchor="middle">Unity tool for Emirates staff to update quiz content</text>
+    <text x="240" y="220" font-size="24" fill="#f7f0d2" text-anchor="middle">Real-time PlayFab syncing keeps booths up to date</text>
+    <text x="240" y="280" font-size="24" fill="#f7f0d2" text-anchor="middle">Empowers non-technical teams at events</text>
+  </g>
+  <g>
+    <rect x="480" y="820" width="640" height="18" fill="url(#accent2)" />
+    <text x="800" y="880" font-size="30" fill="#fefefe" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Attract Screen • Gameplay Stations • Quiz Finale • Companion Editor</text>
+  </g>
+</svg>
