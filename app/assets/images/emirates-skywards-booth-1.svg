@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1d33" />
+      <stop offset="100%" stop-color="#1b2f52" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3f0ff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#c5d8ff" stop-opacity="0.35" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg1)" />
+  <g opacity="0.5">
+    <circle cx="400" cy="220" r="150" fill="url(#glow)" />
+    <circle cx="1200" cy="180" r="180" fill="url(#glow)" />
+    <circle cx="900" cy="760" r="200" fill="url(#glow)" />
+  </g>
+  <g fill="#ffffff" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif">
+    <text x="180" y="200" font-size="54" font-weight="600">25 Year Anniversary Booth</text>
+    <text x="180" y="270" font-size="32" opacity="0.85">Immersive Unity stations for Emirates Skywards members</text>
+  </g>
+  <g transform="translate(160,340)">
+    <rect x="0" y="0" width="580" height="420" rx="28" fill="#121c30" stroke="#cfd7f6" stroke-width="6" />
+    <text x="290" y="100" font-size="42" fill="#f4f6ff" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Attract Mode</text>
+    <text x="290" y="170" font-size="26" fill="#d3dcff" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Animated loop draws in travellers</text>
+    <text x="290" y="230" font-size="26" fill="#d3dcff" text-anchor="middle" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif">Tablet-friendly layout</text>
+    <text x="290" y="300" font-size="26" fill="#d3dcff" text-anchor="middle" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif">PlayFab login integration</text>
+  </g>
+  <g transform="translate(860,320)">
+    <rect x="0" y="0" width="580" height="460" rx="28" fill="#14213b" stroke="#f6c746" stroke-width="6" opacity="0.95" />
+    <text x="290" y="110" font-size="44" fill="#fff4d9" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Three Mini-Games</text>
+    <text x="290" y="190" font-size="28" fill="#fff4d9" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Pilot Runner • Hat Swap • Spin the Wheel</text>
+    <text x="290" y="260" font-size="26" fill="#ffe9aa" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Collect Skywards tokens and unlock tiers</text>
+    <text x="290" y="330" font-size="26" fill="#ffe9aa" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Dynamic UI, audio, and animation polish</text>
+    <text x="290" y="400" font-size="26" fill="#ffe9aa" font-family="'Poppins', 'Helvetica', 'Arial', sans-serif" text-anchor="middle">Built for live events</text>
+  </g>
+</svg>
