@@ -15,6 +15,11 @@
         <div id="unity-mobile-warning">Best experienced in landscape orientation on mobile.</div>
       </div>
     </div>
+    <div class="chrono-crow-mobile-fullscreen-control">
+      <button type="button" class="chrono-crow-fullscreen-button" aria-label="Enter fullscreen">
+        Fullscreen
+      </button>
+    </div>
   </div>
   <script src="<%= @chronocrow_loader_path %>"></script>
   <script>
@@ -24,8 +29,14 @@
     const loadingBar = document.querySelector('#unity-loading-bar');
     const progressBarFull = document.querySelector('#unity-progress-bar-full');
     const fullscreenButton = document.querySelector('#unity-fullscreen-button');
+    const mobileFullscreenButton = document.querySelector('.chrono-crow-fullscreen-button');
+    const mobileFullscreenControl = document.querySelector('.chrono-crow-mobile-fullscreen-control');
     const warningBanner = document.querySelector('#unity-warning');
     warningBanner.style.display = 'none';
+
+    if (mobileFullscreenButton) {
+      mobileFullscreenButton.disabled = true;
+    }
 
     function updateBannerVisibility() {
       warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -76,6 +87,10 @@
         container.classList.remove('unity-mobile');
       }
 
+      if (mobileFullscreenControl) {
+        mobileFullscreenControl.style.display = isMobile ? 'flex' : 'none';
+      }
+
       const frameRect = frame.getBoundingClientRect();
       const frameHeight = frameRect.height || (frameRect.width / aspectRatio);
       config.devicePixelRatio = pixelRatio;
@@ -99,6 +114,12 @@
         fullscreenButton.onclick = () => {
           unityInstance.SetFullscreen(1);
         };
+        if (mobileFullscreenButton) {
+          mobileFullscreenButton.disabled = false;
+          mobileFullscreenButton.addEventListener('click', () => {
+            unityInstance.SetFullscreen(1);
+          });
+        }
       })
       .catch((message) => {
         unityShowBanner(message, 'error');
