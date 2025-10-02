@@ -431,11 +431,56 @@
                 <i class="fab fa-github fa-2x"></i>
               </a>
               <!-- CV Icon -->
-              <!-- CV Icon -->
-              <a href="/cv/Maxim McCain - Fullstack Web Developer.pdf" target="_blank" class="contact text-decoration-none text-dark mx-3" download>
+              <button
+                type="button"
+                class="contact text-decoration-none text-dark mx-3 btn btn-link p-0 border-0 bg-transparent"
+                data-bs-toggle="modal"
+                data-bs-target="#cvSelectionModal"
+                aria-label="Download CV"
+              >
                 <i class="fa-solid fa-file-arrow-down fa-2x"></i>
-              </a>
+              </button>
             </div>
           </div>
         </section>
+        <div
+          class="modal fade"
+          id="cvSelectionModal"
+          tabindex="-1"
+          aria-labelledby="cvSelectionModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cvSelectionModalLabel">Choose a CV</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-start">
+                <p class="mb-3">Select which CV you would like to download:</p>
+                <div class="d-grid gap-2">
+                  <a
+                    href="/cv/Maxim McCain - Fullstack Web Developer.pdf"
+                    class="btn btn-primary"
+                    target="_blank"
+                    download
+                  >
+                    Web Development CV
+                  </a>
+                  <a
+                    href="/cv/Maxim McCain - Unity Developer.pdf"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    download
+                  >
+                    Game Development CV
+                  </a>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
