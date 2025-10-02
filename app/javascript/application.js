@@ -4,7 +4,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 import "bootstrap"
-import "../stylesheets/application"
 import "@popperjs/core"
 
 import "letter_select"  // Assuming this is in your importmap or located correctly in the asset pipeline.
