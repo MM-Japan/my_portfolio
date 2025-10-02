@@ -303,6 +303,30 @@ a:hover {
   width: 100%;
 }
 
+.chrono-crow-page #unity-container,
+.chrono-crow-page #unity-container.unity-mobile,
+.chrono-crow-page .unity-mobile #unity-container {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+}
+
+.chrono-crow-page .chrono-crow-player-frame {
+  position: relative;
+}
+
+.chrono-crow-page .chrono-crow-player-frame #unity-canvas,
+.chrono-crow-page .chrono-crow-player-frame canvas {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 #unity-container #unity-footer {
   gap: 1rem;
 }
