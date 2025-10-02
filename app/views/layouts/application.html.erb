@@ -21,9 +21,21 @@
       <%= yield %>
     </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          AOS.init(); // Initialize AOS after DOM is fully loaded
-      });
+      (function() {
+        const initAOS = function() {
+          if (typeof AOS === 'undefined') return;
+
+          if (!window.__aosInitialized) {
+            AOS.init();
+            window.__aosInitialized = true;
+          } else if (typeof AOS.refreshHard === 'function') {
+            AOS.refreshHard();
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', initAOS);
+        document.addEventListener('turbo:load', initAOS);
+      })();
     </script>
   </body>
 </html>
