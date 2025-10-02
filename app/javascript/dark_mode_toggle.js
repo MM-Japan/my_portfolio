@@ -1,4 +1,8 @@
-document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+const toggleButton = document.getElementById('dark-mode-toggle');
+
+if (!toggleButton) return;
+
+toggleButton.addEventListener('click', function () {
   // Toggle dark mode class on the body
   document.body.classList.toggle('dark-mode');
 
@@ -11,10 +15,12 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function (
   // Check if dark mode is active
   if (document.body.classList.contains('dark-mode')) {
     // Show dark image, hide light image
-    darkImage.style.display = 'block';
-    lightImage.style.display = 'none';
-    navbar.classList.remove('navbar-dark');
-    navbar.classList.add('navbar-light');
+    if (darkImage) darkImage.style.display = 'block';
+    if (lightImage) lightImage.style.display = 'none';
+    if (navbar) {
+      navbar.classList.remove('navbar-dark');
+      navbar.classList.add('navbar-light');
+    }
 
     contact.forEach(link => {
       link.classList.remove('text-dark')
@@ -24,10 +30,12 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function (
 
   } else {
     // Show light image, hide dark image
-    darkImage.style.display = 'none';
-    lightImage.style.display = 'block';
-    navbar.classList.remove('navbar-light');
-    navbar.classList.add('navbar-dark');
+    if (darkImage) darkImage.style.display = 'none';
+    if (lightImage) lightImage.style.display = 'block';
+    if (navbar) {
+      navbar.classList.remove('navbar-light');
+      navbar.classList.add('navbar-dark');
+    }
 
     contact.forEach(link => {
       link.classList.remove('text-white')
