@@ -8,10 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Include your CSS (Bootstrap, custom styles, etc.) -->
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
-    <script type="module" src="<%= asset_path('letter_select.js') %>"></script>
-    <script type="module" src="<%= asset_path('dark_mode_toggle.js') %>"></script>
-    <script type="module" src="<%= asset_path('filter_projects.js') %>"></script>
+    <%= javascript_importmap_tags %>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script> <!-- SoundCloud API -->
   </head>
