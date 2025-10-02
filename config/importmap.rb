@@ -6,7 +6,7 @@ pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 
-pin "popper", to: 'popper.js', preload: true
+pin "@popperjs/core", to: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/index.js", preload: true
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
 pin "letter_select", to: "letter_select.js"
 pin "particles.min", to: "particles.min.js"
