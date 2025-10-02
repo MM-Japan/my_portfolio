@@ -10,3 +10,5 @@ pin "@popperjs/core", to: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/di
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
 pin "letter_select", to: "letter_select.js"
 pin "particles.min", to: "particles.min.js"
+pin "dark_mode_toggle", to: "dark_mode_toggle.js"
+pin "filter_projects", to: "filter_projects.js"
