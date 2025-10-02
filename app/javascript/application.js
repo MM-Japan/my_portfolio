@@ -3,8 +3,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import "bootstrap"
 import "@popperjs/core"
+import "bootstrap"
 
 import "letter_select"  // Assuming this is in your importmap or located correctly in the asset pipeline.
 import "dark_mode_toggle";
