@@ -354,7 +354,6 @@ a:hover {
   width: 100%;
 }
 
-.chrono-crow-page #unity-container,
 .chrono-crow-page #unity-container.unity-mobile,
 .chrono-crow-page .unity-mobile #unity-container {
   position: relative !important;
@@ -371,8 +370,10 @@ a:hover {
   position: relative;
 }
 
-.chrono-crow-page .chrono-crow-player-frame #unity-canvas,
-.chrono-crow-page .chrono-crow-player-frame canvas {
+.chrono-crow-page #unity-container.unity-mobile #unity-canvas,
+.chrono-crow-page #unity-container.unity-mobile canvas,
+.chrono-crow-page .unity-mobile #unity-container #unity-canvas,
+.chrono-crow-page .unity-mobile #unity-container canvas {
   position: relative !important;
   width: 100% !important;
   height: 100% !important;
