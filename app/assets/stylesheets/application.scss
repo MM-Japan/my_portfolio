@@ -269,6 +269,28 @@ a:hover {
   backdrop-filter: blur(6px);
 }
 
+.emirates-media-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.emirates-media-grid .image-card {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .emirates-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .emirates-media-grid {
+    gap: 2rem;
+  }
+}
+
 .emirates-page .image-card__media {
   display: block;
   width: 100%;
