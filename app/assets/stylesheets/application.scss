@@ -303,6 +303,15 @@ a:hover {
   background: #000;
 }
 
+.emirates-page .image-card .emirates-vertical-video {
+  --bs-aspect-ratio: 174%;
+  background: #000;
+}
+
+.emirates-page .emirates-vertical-video .image-card__media {
+  object-fit: contain;
+}
+
 .emirates-page .image-card video.image-card__media {
   background-color: #000;
 }

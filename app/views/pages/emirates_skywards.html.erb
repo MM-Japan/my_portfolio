@@ -22,10 +22,10 @@
             <%= image_tag 'EmiratesImage1.jpg', class: 'image-card__media', alt: 'Emirates Skywards Unity Game Suite booth stations and mini-games' %>
           </div>
           <div class="image-card shadow-lg rounded overflow-hidden">
-            <div class="ratio ratio-16x9">
+            <div class="ratio emirates-vertical-video">
               <%= video_tag '/videos/EmiratesVideo1.mp4',
                             controls: true, preload: 'metadata', playsinline: true,
-                            autoplay: true, muted: true,
+                            autoplay: true, muted: true, loop: true,
                             class: 'image-card__media',
                             aria: { label: 'Gameplay capture of the Emirates Skywards Unity mini-games experience' } %>
             </div>
@@ -34,10 +34,10 @@
             <%= image_tag 'EmiratesImage2.jpg', class: 'image-card__media', alt: 'Emirates Skywards Unity Game Suite quiz companion app interface' %>
           </div>
           <div class="image-card shadow-lg rounded overflow-hidden">
-            <div class="ratio ratio-16x9">
+            <div class="ratio emirates-vertical-video">
               <%= video_tag '/videos/EmiratesVideo2.mp4',
                             controls: true, preload: 'metadata', playsinline: true,
-                            autoplay: true, muted: true,
+                            autoplay: true, muted: true, loop: true,
                             class: 'image-card__media',
                             aria: { label: 'Walkthrough of the Emirates Skywards Unity quiz companion app' } %>
             </div>
