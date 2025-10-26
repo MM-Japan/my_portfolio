@@ -18,10 +18,20 @@
       </div>
       <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-duration="600">
         <div class="image-card shadow-lg rounded overflow-hidden mb-4">
-          <%= image_tag 'emirates-skywards-booth-1.svg', class: 'img-fluid w-100', alt: 'Emirates Skywards booth illustration highlighting mini-games' %>
+          <%= image_tag 'EmiratesImage1.jpg', class: 'image-card__media', alt: 'Emirates Skywards Unity Game Suite booth stations and mini-games' %>
+        </div>
+        <div class="image-card shadow-lg rounded overflow-hidden mb-4">
+          <div class="ratio ratio-16x9">
+            <%= video_tag 'EmiratesVideo1.mp4', controls: true, preload: 'metadata', playsinline: true, class: 'image-card__media', aria: { label: 'Gameplay capture of the Emirates Skywards Unity mini-games experience' } %>
+          </div>
+        </div>
+        <div class="image-card shadow-lg rounded overflow-hidden mb-4">
+          <%= image_tag 'EmiratesImage2.jpg', class: 'image-card__media', alt: 'Emirates Skywards Unity Game Suite quiz companion app interface' %>
         </div>
         <div class="image-card shadow-lg rounded overflow-hidden">
-          <%= image_tag 'emirates-skywards-booth-2.svg', class: 'img-fluid w-100', alt: 'Emirates Skywards Unity Game Suite companion app overview' %>
+          <div class="ratio ratio-16x9">
+            <%= video_tag 'EmiratesVideo2.mp4', controls: true, preload: 'metadata', playsinline: true, class: 'image-card__media', aria: { label: 'Walkthrough of the Emirates Skywards Unity quiz companion app' } %>
+          </div>
         </div>
       </div>
     </div>
