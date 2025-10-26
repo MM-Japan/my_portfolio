@@ -269,6 +269,22 @@ a:hover {
   backdrop-filter: blur(6px);
 }
 
+.emirates-page .image-card__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.emirates-page .image-card .ratio {
+  --bs-aspect-ratio: 56.25%;
+  background: #000;
+}
+
+.emirates-page .image-card video.image-card__media {
+  background-color: #000;
+}
+
 .emirates-page .feature-card {
   background: rgba(12, 22, 41, 0.85);
   border-radius: 1.25rem;
