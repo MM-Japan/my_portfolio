@@ -28,4 +28,7 @@ class PagesController < ApplicationController
 
   def emirates_skywards
   end
+
+  def vhs
+  end
 end
