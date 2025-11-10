@@ -1,0 +1,133 @@
+<div class="vhs-page position-relative">
+  <div class="vhs-page__grain" aria-hidden="true"></div>
+  <div class="vhs-page__fog" aria-hidden="true"></div>
+
+  <section class="container py-5 vhs-hero">
+    <div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-6">
+        <span class="vhs-tag">Survival Horror</span>
+        <h1 class="display-3 fw-bold vhs-title">VHS</h1>
+        <p class="lead vhs-intro">Record. Reveal. Run.</p>
+        <p class="vhs-copy">
+          You awaken in a town that should be empty—yet something still moves in the static. With only an old VHS camcorder to
+          guide you, you begin to see what your eyes cannot. Through the warped lens, hidden shapes emerge: ghosts, fragments,
+          things that shouldn’t exist.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+          <%= link_to 'Coming Soon on itch.io', 'https://itch.io', class: 'btn vhs-cta disabled', aria: { disabled: 'true' }, tabindex: '-1' %>
+          <%= link_to 'View Gameplay Gallery', '#vhs-gallery', class: 'btn vhs-secondary' %>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 text-center">
+        <div class="vhs-hero__frame mx-auto">
+          <%= image_tag 'VHS_Banner.png', alt: 'VHS key art showing the haunted town skyline', class: 'img-fluid vhs-hero__image' %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-5 vhs-features">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="vhs-feature-card h-100">
+          <h2 class="h4">Analog Sight</h2>
+          <p>Switch between reality and the camcorder&#39;s spectral feed to reveal routes, clues, and threats hidden in the fog.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="vhs-feature-card h-100">
+          <h2 class="h4">Static-Torn Storytelling</h2>
+          <p>Piece together tape fragments scattered across the town to uncover who—or what—warped this place beyond recognition.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="vhs-feature-card h-100">
+          <h2 class="h4">Nerve-Shredding Atmosphere</h2>
+          <p>Sound design and PSX-inspired visuals combine to deliver a Silent Hill homage filled with dread, grit, and analog warmth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vhs-gallery" class="container pb-5 vhs-gallery">
+    <div class="row justify-content-between align-items-center mb-4">
+      <div class="col-auto">
+        <h2 class="h3 mb-0">Gameplay Glimpses</h2>
+      </div>
+      <div class="col-auto">
+        <span class="vhs-gallery__note">Captured straight from the camcorder feed</span>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_IMG_1_ONLY_GAMEPLAY_FINAL.png', alt: 'Player exploring a fog drenched street', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Static reveals the outline of something stalking the streets.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_IMG_4_ONLY_GAMEPLAY_FINAL.png', alt: 'Camcorder view exposing ghostly silhouettes', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Switch realities to navigate impossible hallways and locked doors.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_IMG_6_ONLY_GAMEPLAY_FINAL.png', alt: 'Encounter with a spectral entity emitting static', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Outrun specters that flicker in and out with each surge of interference.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_IMG_7_ONLY_GAMEPLAY_FINAL.png', alt: 'Derelict alleyway lit by crimson emergency lights', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Environmental storytelling hints at the town&#39;s last broadcast.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_IMG_8_ONLY_GAMEPLAY_FINAL.png', alt: 'Static drenched figure looming at the end of a corridor', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Keep moving—when the tape stops, the horrors step through.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="vhs-screenshot-card">
+          <div class="ratio ratio-4x3 vhs-screenshot-frame">
+            <%= image_tag 'VHS_PS2.png', alt: 'Old television and VHS player setup in a dimly lit room', class: 'vhs-screenshot' %>
+          </div>
+          <figcaption>Save progress by finding safe rooms equipped with analog relics.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-5 vhs-lore">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div class="vhs-lore__frame">
+          <%= image_tag 'VHS_IMG_2_ONLY_GAMEPLAY_FINAL.png', alt: 'VHS camcorder interface scanning a haunted plaza', class: 'img-fluid rounded-4' %>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <h2 class="h3">Stay Tuned</h2>
+        <p>
+          VHS is in active development, with new zones, haunt encounters, and analog puzzles being spooled up. Follow for updates
+          as the town grows stranger and the signal grows stronger.
+        </p>
+        <p class="mb-0">
+          Want to be the first to know when the download goes live? Keep an eye on itch.io and join the mailing list soon for
+          exclusive beta access.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

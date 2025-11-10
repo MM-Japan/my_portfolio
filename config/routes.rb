@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'pages/secrets'
   get 'chronocrow', to: 'pages#chrono_crow', as: :chrono_crow
   get 'emirates-skywards', to: 'pages#emirates_skywards', as: :emirates_skywards
+  get 'vhs', to: 'pages#vhs', as: :vhs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
