@@ -198,6 +198,39 @@ a:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.actor-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
+}
+
+.actor-page__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #f3f4f6;
+}
+
+.actor-page__message,
+.actor-page__subtext {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: #e5e7eb;
+  font-size: 1.15rem;
+}
+
+.actor-page__image-wrapper {
+  margin: 2rem auto;
+  max-width: 28rem;
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.35));
+}
+
+.actor-page__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
 .chrono-crow-player-frame {
   position: relative;
 }

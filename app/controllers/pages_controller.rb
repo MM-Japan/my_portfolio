@@ -31,4 +31,7 @@ class PagesController < ApplicationController
 
   def vhs
   end
+
+  def actor
+  end
 end
