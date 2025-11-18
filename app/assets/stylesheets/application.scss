@@ -203,7 +203,20 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
+  padding: 4rem 1.5rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.25), transparent 45%),
+    linear-gradient(160deg, #020617 0%, #0f172a 55%, #020617 100%);
+}
+
+.actor-page .container {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 1.75rem;
+  padding: 3rem clamp(1rem, 4vw, 4rem);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1.5rem 3.5rem rgba(2, 6, 23, 0.65);
 }
 
 .actor-page__title {
