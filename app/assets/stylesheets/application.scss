@@ -198,6 +198,52 @@ a:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.actor-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.25), transparent 45%),
+    linear-gradient(160deg, #020617 0%, #0f172a 55%, #020617 100%);
+}
+
+.actor-page .container {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 1.75rem;
+  padding: 3rem clamp(1rem, 4vw, 4rem);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1.5rem 3.5rem rgba(2, 6, 23, 0.65);
+}
+
+.actor-page__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #f3f4f6;
+}
+
+.actor-page__message,
+.actor-page__subtext {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: #e5e7eb;
+  font-size: 1.15rem;
+}
+
+.actor-page__image-wrapper {
+  margin: 2rem auto;
+  max-width: 28rem;
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.35));
+}
+
+.actor-page__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
 .chrono-crow-player-frame {
   position: relative;
 }
